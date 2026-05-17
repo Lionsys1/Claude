@@ -1,0 +1,99 @@
+# robots.txt for lionsyssolutions.com
+# Last updated: 2026-05-17
+# Purpose: Allow all legitimate search and AI crawlers; protect WP internals
+
+# -------------------------------------------------------
+# SEARCH ENGINE CRAWLERS
+# -------------------------------------------------------
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# -------------------------------------------------------
+# AI / LLM CRAWLERS
+# -------------------------------------------------------
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# -------------------------------------------------------
+# DEFAULT: Allow all other crawlers
+# -------------------------------------------------------
+User-agent: *
+Allow: /
+
+# Block WordPress admin and login areas from all crawlers
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /wp-includes/
+Disallow: /wp-content/plugins/
+Disallow: /wp-content/cache/
+Disallow: /wp-content/themes/
+Disallow: /?s=
+Disallow: /search/
+Disallow: /feed/
+Disallow: /trackback/
+Disallow: /*?*replytocom=
+Disallow: /xmlrpc.php
+Disallow: /readme.html
+Disallow: /license.txt
+
+# Allow crawlers to access CSS and JS (important for rendering)
+Allow: /wp-content/uploads/
+Allow: /wp-content/themes/*.css
+Allow: /wp-content/themes/*.js
+
+# -------------------------------------------------------
+# SITEMAP
+# -------------------------------------------------------
+Sitemap: https://lionsyssolutions.com/sitemap.xml
+Sitemap: https://lionsyssolutions.com/sitemap_index.xml
