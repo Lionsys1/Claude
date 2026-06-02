@@ -1,0 +1,48 @@
+name: Lionsys Opportunity Monitor
+
+on:
+  schedule:
+    # Runs every weekday at 6:00 AM Eastern (11:00 UTC)
+    - cron: '0 11 * * 1-5'
+  workflow_dispatch:  # allow manual trigger from GitHub UI
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Restore cached opportunity data
+        uses: actions/cache@v4
+        with:
+          path: data/
+          key: opportunity-data-${{ github.run_id }}
+          restore-keys: |
+            opportunity-data-
+
+      - name: Run opportunity monitor
+        env:
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          RECIPIENTS: ${{ secrets.RECIPIENTS }}
+          SAM_GOV_API_KEY: ${{ secrets.SAM_GOV_API_KEY }}
+        run: |
+          cd scripts
+          python main.py
+
+      - name: Save updated opportunity data
+        uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: data/
+          key: opportunity-data-${{ github.run_id }}
