@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="1100" viewBox="0 0 900 1100" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0c29"/>
+      <stop offset="50%" style="stop-color:#302b63"/>
+      <stop offset="100%" style="stop-color:#24243e"/>
+    </linearGradient>
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff416c"/>
+      <stop offset="100%" style="stop-color:#ff4b2b"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#11998e"/>
+      <stop offset="100%" style="stop-color:#38ef7d"/>
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4776E6"/>
+      <stop offset="100%" style="stop-color:#8E54E9"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f7971e"/>
+      <stop offset="100%" style="stop-color:#ffd200"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+    <filter id="glowStrong">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="1100" fill="url(#bgGrad)"/>
+
+  <!-- Decorative circles background -->
+  <circle cx="50" cy="50" r="80" fill="none" stroke="#ffffff08" stroke-width="1"/>
+  <circle cx="850" cy="100" r="120" fill="none" stroke="#ffffff06" stroke-width="1"/>
+  <circle cx="100" cy="1050" r="100" fill="none" stroke="#ffffff05" stroke-width="1"/>
+  <circle cx="800" cy="1000" r="90" fill="none" stroke="#ffffff07" stroke-width="1"/>
+
+  <!-- TITLE -->
+  <rect x="150" y="18" width="600" height="52" rx="26" fill="url(#blueGrad)" filter="url(#glow)"/>
+  <text x="450" y="50" text-anchor="middle" fill="white" font-size="20" font-weight="800" letter-spacing="1">⚡ PAYMENT PROCESS TRANSFORMATION</text>
+
+  <!-- ============ OLD MODEL SECTION ============ -->
+  <rect x="30" y="85" width="840" height="420" rx="18" fill="#1a0a0a" stroke="#ff416c" stroke-width="2" filter="url(#shadow)" opacity="0.95"/>
+  <rect x="30" y="85" width="840" height="42" rx="18" fill="url(#redGrad)"/>
+  <rect x="30" y="109" width="840" height="18" rx="0" fill="url(#redGrad)"/>
+
+  <text x="450" y="113" text-anchor="middle" fill="white" font-size="17" font-weight="800" letter-spacing="2">💸 OLD MODEL — "PAY &amp; CHASE"  ·  WHERE THE CRACKS ARE</text>
+
+  <!-- Step boxes OLD -->
+  <!-- Step 1 -->
+  <rect x="300" y="140" width="300" height="52" rx="10" fill="#2a1a2e" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="450" y="160" text-anchor="middle" fill="#e8b4f8" font-size="13" font-weight="700">📄 Payment Request Arrives</text>
+  <text x="450" y="178" text-anchor="middle" fill="#c39bd3" font-size="11">Invoice, grant claim, vendor bill</text>
+
+  <!-- Arrow -->
+  <line x1="450" y1="192" x2="450" y2="208" stroke="#9b59b6" stroke-width="2"/>
+  <polygon points="445,206 455,206 450,214" fill="#9b59b6"/>
+
+  <!-- Step 2 -->
+  <rect x="290" y="210" width="320" height="52" rx="10" fill="#2a1a2e" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="450" y="230" text-anchor="middle" fill="#f1948a" font-size="13" font-weight="700">👤 Manual Review</text>
+  <text x="450" y="248" text-anchor="middle" fill="#c0392b" font-size="11">One person, 40+ invoices a day</text>
+  <!-- Crack badge -->
+  <rect x="630" y="215" width="210" height="40" rx="8" fill="#ff416c22" stroke="#ff416c" stroke-width="1"/>
+  <text x="735" y="231" text-anchor="middle" fill="#ff6b6b" font-size="10" font-weight="700">⚠ No cross-system check</text>
+  <text x="735" y="247" text-anchor="middle" fill="#ff6b6b" font-size="10">Duplicates slip through</text>
+
+  <!-- Arrow -->
+  <line x1="450" y1="262" x2="450" y2="278" stroke="#e74c3c" stroke-width="2"/>
+  <polygon points="445,276 455,276 450,284" fill="#e74c3c"/>
+
+  <!-- Step 3 -->
+  <rect x="290" y="280" width="320" height="52" rx="10" fill="#2a1a2e" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="450" y="300" text-anchor="middle" fill="#f1948a" font-size="13" font-weight="700">✅ Payment Approved</text>
+  <text x="450" y="318" text-anchor="middle" fill="#c0392b" font-size="11">No eligibility or budget check</text>
+  <!-- Crack badge -->
+  <rect x="630" y="285" width="210" height="40" rx="8" fill="#ff416c22" stroke="#ff416c" stroke-width="1"/>
+  <text x="735" y="301" text-anchor="middle" fill="#ff6b6b" font-size="10" font-weight="700">⚠ Debarred vendor paid</text>
+  <text x="735" y="317" text-anchor="middle" fill="#ff6b6b" font-size="10">Ineligible recipient funded</text>
+
+  <!-- Arrow -->
+  <line x1="450" y1="332" x2="450" y2="348" stroke="#e74c3c" stroke-width="2"/>
+  <polygon points="445,346 455,346 450,354" fill="#e74c3c"/>
+
+  <!-- Step 4 -->
+  <rect x="290" y="350" width="320" height="52" rx="10" fill="#2a1a2e" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="450" y="370" text-anchor="middle" fill="#f1948a" font-size="13" font-weight="700">💳 Payment Goes Out</text>
+  <text x="450" y="388" text-anchor="middle" fill="#c0392b" font-size="11">No risk score, no audit trail</text>
+  <!-- Crack badge -->
+  <rect x="630" y="355" width="210" height="40" rx="8" fill="#ff416c22" stroke="#ff416c" stroke-width="1"/>
+  <text x="735" y="371" text-anchor="middle" fill="#ff6b6b" font-size="10" font-weight="700">⚠ Fraud pattern invisible</text>
+  <text x="735" y="387" text-anchor="middle" fill="#ff6b6b" font-size="10">Invoice just below threshold</text>
+
+  <!-- Arrow -->
+  <line x1="450" y1="402" x2="450" y2="418" stroke="#c0392b" stroke-width="2"/>
+  <polygon points="445,416 455,416 450,424" fill="#c0392b"/>
+
+  <!-- Step 5 Audit -->
+  <rect x="290" y="420" width="320" height="52" rx="10" fill="#3a1a1a" stroke="#ff4b2b" stroke-width="2"/>
+  <text x="450" y="440" text-anchor="middle" fill="#ff7675" font-size="13" font-weight="700">🔍 Audit — Months Later</text>
+  <text x="450" y="458" text-anchor="middle" fill="#d63031" font-size="11">Problem found, money is gone</text>
+  <!-- Big loss badge -->
+  <rect x="55" y="425" width="210" height="40" rx="8" fill="#ff000022" stroke="#ff4b2b" stroke-width="1.5"/>
+  <text x="160" y="441" text-anchor="middle" fill="#ff7675" font-size="10" font-weight="700">💥 $11B lost annually</text>
+  <text x="160" y="457" text-anchor="middle" fill="#ff7675" font-size="10">Recovery rate ~20%</text>
+
+  <!-- ============ DIVIDER ============ -->
+  <line x1="60" y1="525" x2="840" y2="525" stroke="#ffffff22" stroke-width="1" stroke-dasharray="8,4"/>
+  <rect x="320" y="512" width="260" height="26" rx="13" fill="#302b63"/>
+  <text x="450" y="530" text-anchor="middle" fill="#a29bfe" font-size="12" font-weight="700">⬇  THE FIX — DETECT AND DEPLOY  ⬇</text>
+
+  <!-- ============ NEW MODEL SECTION ============ -->
+  <rect x="30" y="545" width="840" height="500" rx="18" fill="#0a1a0f" stroke="#38ef7d" stroke-width="2" filter="url(#shadow)" opacity="0.97"/>
+  <rect x="30" y="545" width="840" height="42" rx="18" fill="url(#greenGrad)"/>
+  <rect x="30" y="569" width="840" height="18" fill="url(#greenGrad)"/>
+  <text x="450" y="572" text-anchor="middle" fill="#0a1a0f" font-size="17" font-weight="800" letter-spacing="2">🚀 NEW MODEL — AUTOMATED CHECKS BEFORE EVERY PAYMENT</text>
+
+  <!-- Step 1 NEW -->
+  <rect x="300" y="600" width="300" height="52" rx="10" fill="#0d2a1a" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="450" y="620" text-anchor="middle" fill="#82e0aa" font-size="13" font-weight="700">📄 Payment Request Arrives</text>
+  <text x="450" y="638" text-anchor="middle" fill="#58d68d" font-size="11">Same invoice, same claim</text>
+
+  <!-- Arrow -->
+  <line x1="450" y1="652" x2="450" y2="668" stroke="#27ae60" stroke-width="2"/>
+  <polygon points="445,666 455,666 450,674" fill="#27ae60"/>
+
+  <!-- 5 Checks Banner -->
+  <rect x="160" y="670" width="580" height="55" rx="12" fill="#0d3a20" stroke="#38ef7d" stroke-width="2" filter="url(#glow)"/>
+  <text x="450" y="691" text-anchor="middle" fill="#38ef7d" font-size="14" font-weight="800">⚡ 5 AUTOMATED CHECKS RUN INSTANTLY</text>
+  <text x="450" y="710" text-anchor="middle" fill="#82e0aa" font-size="11">Eligibility · Duplicate · Budget · Risk Score · Audit Log</text>
+
+  <!-- Check Pills -->
+  <rect x="55" y="742" width="140" height="34" rx="17" fill="#145a32" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="125" y="764" text-anchor="middle" fill="#82e0aa" font-size="11" font-weight="700">✓ Eligibility Check</text>
+
+  <rect x="210" y="742" width="140" height="34" rx="17" fill="#145a32" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="280" y="764" text-anchor="middle" fill="#82e0aa" font-size="11" font-weight="700">✓ Duplicate Scan</text>
+
+  <rect x="365" y="742" width="140" height="34" rx="17" fill="#145a32" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="435" y="764" text-anchor="middle" fill="#82e0aa" font-size="11" font-weight="700">✓ Budget Check</text>
+
+  <rect x="520" y="742" width="140" height="34" rx="17" fill="#145a32" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="590" y="764" text-anchor="middle" fill="#82e0aa" font-size="11" font-weight="700">✓ AI Risk Score</text>
+
+  <rect x="675" y="742" width="165" height="34" rx="17" fill="#145a32" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="757" y="764" text-anchor="middle" fill="#82e0aa" font-size="11" font-weight="700">✓ Audit Trail Logged</text>
+
+  <!-- Arrow down to risk decision -->
+  <line x1="450" y1="776" x2="450" y2="796" stroke="#27ae60" stroke-width="2"/>
+  <polygon points="445,794 455,794 450,802" fill="#27ae60"/>
+
+  <!-- Risk Level decision box -->
+  <rect x="310" y="798" width="280" height="44" rx="12" fill="#1a3a2a" stroke="#f39c12" stroke-width="2"/>
+  <text x="450" y="818" text-anchor="middle" fill="#ffd200" font-size="13" font-weight="800">🎯 RISK LEVEL?</text>
+  <text x="450" y="835" text-anchor="middle" fill="#f9e79f" font-size="10">Automated decision engine evaluates</text>
+
+  <!-- Fork arrows -->
+  <line x1="310" y1="820" x2="200" y2="860" stroke="#38ef7d" stroke-width="2"/>
+  <polygon points="194,855 204,862 197,867" fill="#38ef7d"/>
+  <line x1="590" y1="820" x2="700" y2="860" stroke="#ff416c" stroke-width="2"/>
+  <polygon points="696,855 706,862 699,867" fill="#ff416c"/>
+
+  <!-- Low risk box -->
+  <rect x="60" y="862" width="260" height="64" rx="12" fill="#0a2a10" stroke="#38ef7d" stroke-width="2" filter="url(#glow)"/>
+  <text x="190" y="882" text-anchor="middle" fill="#38ef7d" font-size="13" font-weight="800">🟢 LOW RISK</text>
+  <text x="190" y="898" text-anchor="middle" fill="#82e0aa" font-size="11" font-weight="700">Auto-Approved</text>
+  <text x="190" y="914" text-anchor="middle" fill="#58d68d" font-size="10">Moves instantly — no delay</text>
+
+  <!-- High risk box -->
+  <rect x="580" y="862" width="260" height="64" rx="12" fill="#2a0a0a" stroke="#ff416c" stroke-width="2" filter="url(#glow)"/>
+  <text x="710" y="882" text-anchor="middle" fill="#ff7675" font-size="13" font-weight="800">🔴 HIGH RISK</text>
+  <text x="710" y="898" text-anchor="middle" fill="#f1948a" font-size="11" font-weight="700">Human Review</text>
+  <text x="710" y="914" text-anchor="middle" fill="#ec7063" font-size="10">Priority queue, clear reason</text>
+
+  <!-- Converge arrows -->
+  <line x1="190" y1="926" x2="350" y2="960" stroke="#38ef7d" stroke-width="2"/>
+  <polygon points="345,956 355,963 348,968" fill="#38ef7d"/>
+  <line x1="710" y1="926" x2="550" y2="960" stroke="#ff416c" stroke-width="2"/>
+  <polygon points="545,956 555,963 548,968" fill="#ff416c"/>
+
+  <!-- Clean label -->
+  <text x="450" y="958" text-anchor="middle" fill="#a29bfe" font-size="12" font-weight="700">✨ CLEAN</text>
+
+  <!-- Arrow -->
+  <line x1="450" y1="965" x2="450" y2="981" stroke="#38ef7d" stroke-width="2"/>
+  <polygon points="445,979 455,979 450,987" fill="#38ef7d"/>
+
+  <!-- Payment Released -->
+  <rect x="250" y="985" width="400" height="52" rx="14" fill="url(#greenGrad)" filter="url(#glowStrong)"/>
+  <text x="450" y="1007" text-anchor="middle" fill="#0a1a0f" font-size="14" font-weight="800">💚 PAYMENT RELEASED</text>
+  <text x="450" y="1025" text-anchor="middle" fill="#0d3a20" font-size="11">Logged · Traceable · Audit-ready</text>
+
+  <!-- ============ BOTTOM STATS ============ -->
+  <rect x="30" y="1054" width="840" height="36" rx="10" fill="#1a1a2e" stroke="#a29bfe" stroke-width="1"/>
+  <text x="450" y="1077" text-anchor="middle" fill="#a29bfe" font-size="11" font-weight="600">
+    📉 -30% Less Manual Effort  ·  🛡 Fraud Caught Before Payment  ·  📋 Full Audit Trail Auto-Built  ·  🎯 Compliance Team on Real Risk
+  </text>
+
+</svg>
