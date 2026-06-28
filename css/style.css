@@ -113,7 +113,7 @@ input, select, textarea, button { font-family: var(--font); }
 .hero {
   background:
     linear-gradient(135deg, rgba(0,12,40,0.88) 0%, rgba(0,30,80,0.82) 60%, rgba(0,50,120,0.75) 100%),
-    url('https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=1600&q=80&auto=format&fit=crop') center/cover no-repeat;
+    url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=80&auto=format&fit=crop') center/cover no-repeat;
   color: var(--white);
   padding: 96px 0 80px;
   position: relative;
