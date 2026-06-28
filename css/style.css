@@ -410,3 +410,165 @@ input, select, textarea, button { font-family: var(--font); }
   .form-row { grid-template-columns: 1fr; }
   .stat-divider { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 24px; }
 }
+
+/* ── Who We Are ─────────────────────────────────── */
+.who-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.who-image {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  aspect-ratio: 4/3;
+}
+.who-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.who-image:hover img { transform: scale(1.03); }
+.who-content p {
+  color: var(--gray-600);
+  margin-bottom: 16px;
+  line-height: 1.75;
+}
+.who-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 24px 0 28px;
+}
+.who-highlight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+  color: var(--text);
+}
+.who-highlight-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+/* ── IT Consulting ───────────────────────────────── */
+.consulting-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.consulting-content p {
+  color: var(--gray-600);
+  margin-bottom: 16px;
+  line-height: 1.75;
+}
+.consulting-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 24px;
+  margin-top: 20px;
+}
+.consulting-list li {
+  position: relative;
+  padding-left: 20px;
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 500;
+}
+.consulting-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--cyan);
+  font-weight: 700;
+}
+.consulting-image {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  aspect-ratio: 4/3;
+}
+.consulting-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.consulting-image:hover img { transform: scale(1.03); }
+
+/* ── Testimonials ────────────────────────────────── */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+.testimonial-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  position: relative;
+  transition: var(--transition);
+}
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--cyan);
+}
+.testimonial-quote {
+  font-size: 80px;
+  line-height: 0.6;
+  color: var(--cyan);
+  opacity: 0.3;
+  font-family: Georgia, serif;
+  margin-bottom: 16px;
+}
+.testimonial-text {
+  color: var(--gray-600);
+  font-size: 16px;
+  line-height: 1.75;
+  margin-bottom: 28px;
+  font-style: italic;
+}
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.testimonial-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy), var(--cyan));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.testimonial-info strong {
+  display: block;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 15px;
+}
+.testimonial-info span {
+  color: var(--gray-400);
+  font-size: 13px;
+}
+
+@media (max-width: 1024px) {
+  .who-inner, .consulting-inner { grid-template-columns: 1fr; gap: 36px; }
+  .who-image { order: -1; }
+  .consulting-image { order: -1; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .consulting-list { grid-template-columns: 1fr; }
+}
