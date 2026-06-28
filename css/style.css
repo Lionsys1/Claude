@@ -112,8 +112,8 @@ input, select, textarea, button { font-family: var(--font); }
 /* ── Hero ───────────────────────────────────────── */
 .hero {
   background:
-    linear-gradient(135deg, rgba(0,18,51,0.93) 0%, rgba(0,45,114,0.88) 60%, rgba(0,61,158,0.85) 100%),
-    url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1600&q=80&auto=format&fit=crop') center/cover no-repeat;
+    linear-gradient(135deg, rgba(0,12,40,0.88) 0%, rgba(0,30,80,0.82) 60%, rgba(0,50,120,0.75) 100%),
+    url('https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=1600&q=80&auto=format&fit=crop') center/cover no-repeat;
   color: var(--white);
   padding: 96px 0 80px;
   position: relative;
@@ -157,7 +157,7 @@ input, select, textarea, button { font-family: var(--font); }
 }
 .hero-pill::before { content: '●'; font-size: 8px; animation: pulse 2s infinite; }
 @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
-.hero-title { font-size: clamp(36px, 5vw, 60px); font-weight: 900; line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 20px; }
+.hero-title { font-size: clamp(36px, 5vw, 64px); font-weight: 900; line-height: 1.05; letter-spacing: -0.5px; margin-bottom: 20px; text-transform: uppercase; }
 .hero-title span { color: var(--cyan); }
 .hero-sub { font-size: 18px; color: rgba(255,255,255,0.72); line-height: 1.75; margin-bottom: 36px; max-width: 460px; }
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
