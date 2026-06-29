@@ -181,6 +181,8 @@ input, select, textarea, button { font-family: var(--font); }
 /* ── Cert Strip ─────────────────────────────────── */
 .cert-strip { background: var(--navy); padding: 18px 0; }
 .cert-strip-inner { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
+.cert-strip-item { display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.85); font-size: 13px; font-weight: 600; letter-spacing: 0.5px; }
+.cert-strip-img { width: 32px; height: 32px; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.9; }
 .cert-item { display: flex; align-items: center; gap: 9px; color: rgba(255,255,255,0.82); font-size: 12px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; }
 .cert-check { width: 20px; height: 20px; background: var(--cyan); color: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 900; flex-shrink: 0; }
 
@@ -483,8 +485,9 @@ input, select, textarea, button { font-family: var(--font); }
 }
 .why-bullets {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  flex-direction: row;
+  gap: 32px;
+  flex-wrap: wrap;
 }
 .why-bullet-item {
   display: flex;
