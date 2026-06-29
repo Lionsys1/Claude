@@ -249,7 +249,12 @@ input, select, textarea, button { font-family: var(--font); }
 .why-card p { font-size: 14px; color: var(--gray-600); line-height: 1.75; }
 
 /* ── Stats ──────────────────────────────────────── */
-.stats { background: linear-gradient(135deg, var(--navy-dark), var(--navy)); padding: 64px 0; }
+.stats,
+.stats-section {
+  background-color: var(--navy);
+  background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+  padding: 64px 0;
+}
 .stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; text-align: center; }
 .stat-divider { border-right: 1px solid rgba(255,255,255,0.1); }
 .stat-number { font-size: 52px; font-weight: 900; color: var(--cyan); line-height: 1; letter-spacing: -2px; margin-bottom: 8px; }
@@ -486,26 +491,27 @@ input, select, textarea, button { font-family: var(--font); }
 .why-bullets {
   display: flex;
   flex-direction: row;
-  gap: 32px;
+  gap: 40px;
   flex-wrap: wrap;
+  align-items: center;
 }
 .why-bullet-item {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: rgba(255,255,255,0.9);
+  color: #ffffff;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
 }
 .why-bullet-icon {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   background: var(--cyan);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 900;
   color: white;
   flex-shrink: 0;
