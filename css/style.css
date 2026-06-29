@@ -424,6 +424,111 @@ input, select, textarea, button { font-family: var(--font); }
   .stat-divider { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 24px; }
 }
 
+/* ── Competencies Grid ───────────────────────────── */
+.competencies-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.competency-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  text-align: center;
+  padding-bottom: 28px;
+  transition: var(--transition);
+}
+.competency-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--cyan);
+}
+.competency-img-wrap {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 28px auto 20px;
+  border: 4px solid var(--gray-100);
+  box-shadow: 0 4px 16px rgba(0,45,114,0.12);
+}
+.competency-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.competency-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 20px 10px;
+  line-height: 1.3;
+}
+.competency-card p {
+  font-size: 13px;
+  color: var(--gray-600);
+  line-height: 1.65;
+  margin: 0 20px;
+}
+
+/* ── Why Lionsys bullets ─────────────────────────── */
+.why-lionsys-inner {
+  display: flex;
+  gap: 48px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.why-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.why-bullet-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255,255,255,0.9);
+  font-size: 16px;
+  font-weight: 500;
+}
+.why-bullet-icon {
+  width: 28px;
+  height: 28px;
+  background: var(--cyan);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 900;
+  color: white;
+  flex-shrink: 0;
+}
+
+/* ── Who We Are driving block ────────────────────── */
+.who-driving {
+  margin-top: 28px;
+  padding: 24px;
+  background: var(--gray-50);
+  border-left: 4px solid var(--cyan);
+  border-radius: var(--radius);
+}
+.who-driving h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.who-driving p {
+  color: var(--gray-600);
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
 /* ── Who We Are ─────────────────────────────────── */
 .who-inner {
   display: grid;
@@ -584,4 +689,10 @@ input, select, textarea, button { font-family: var(--font); }
   .consulting-image { order: -1; }
   .testimonials-grid { grid-template-columns: 1fr; }
   .consulting-list { grid-template-columns: 1fr; }
+  .competencies-grid { grid-template-columns: repeat(2, 1fr); }
+  .why-lionsys-inner { flex-direction: column; gap: 32px; }
+}
+@media (max-width: 640px) {
+  .competencies-grid { grid-template-columns: 1fr; }
+  .cert-grid { grid-template-columns: repeat(2, 1fr); }
 }
