@@ -254,13 +254,26 @@ input, select, textarea, button { font-family: var(--font); }
 .stat-label { font-size: 13px; color: rgba(255,255,255,0.65); font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; }
 
 /* ── Certifications Section ─────────────────────── */
-.certs-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; margin-top: 48px; }
-.cert-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px 20px; text-align: center; transition: var(--transition); }
-.cert-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--blue); }
-.cert-icon { width: 60px; height: 60px; background: linear-gradient(135deg, var(--navy), var(--blue)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; margin: 0 auto 14px; }
-.cert-card h4 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
-.cert-card p { font-size: 12px; color: var(--gray-600); line-height: 1.6; }
-.cert-sba { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--cyan); margin-top: 8px; }
+.cert-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; }
+.cert-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px 24px; text-align: center; transition: var(--transition); }
+.cert-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--blue); }
+.cert-card h3 { font-size: 18px; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+.cert-card p { font-size: 13px; color: var(--gray-600); line-height: 1.65; }
+.cert-badge-wrap { position: relative; width: 100px; height: 100px; margin: 0 auto 20px; }
+.cert-badge-img { width: 100px; height: 100px; object-fit: contain; position: relative; z-index: 1; }
+.cert-badge-fallback { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.cert-badge-seal {
+  width: 90px; height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+  border: 3px solid var(--cyan);
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-weight: 900; font-size: 13px; letter-spacing: 1px;
+  text-align: center; padding: 8px;
+  box-shadow: 0 4px 16px rgba(0,45,114,0.25);
+}
+/* Hide fallback when real image loads */
+.cert-badge-img:not([style*="display:none"]) + .cert-badge-fallback { display: none; }
 
 /* ── CTA ────────────────────────────────────────── */
 .cta-section { background: linear-gradient(135deg, var(--blue), var(--navy)); padding: 80px 0; text-align: center; }
