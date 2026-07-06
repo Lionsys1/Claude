@@ -32,7 +32,7 @@ Edit `.env`:
 | Variable | What it's for |
 |---|---|
 | `EMAIL_USER` / `EMAIL_PASSWORD` | The Outlook/Office 365 account you'll send from. |
-| `SMTP_HOST` / `SMTP_PORT` | Defaults to `smtp.office365.com:587`, works for both Outlook.com and Office 365 work/school accounts. |
+| `SMTP_HOST` / `SMTP_PORT` | `smtp-mail.outlook.com:587` for a personal Outlook.com/Hotmail account, `smtp.office365.com:587` for a work/school Microsoft 365 account. |
 | `ADMIN_PASSWORD` | Password to log into `/dashboard` and `/compose`. Keep this private — anyone with it can send to your whole list. |
 | `FLASK_SECRET_KEY` | Random string used to sign login sessions. Generate one with `python -c "import secrets; print(secrets.token_hex(32))"`. |
 | `BASE_URL` | The public URL where this app is reachable (see "Deploying" below). Used to build unsubscribe links. |
@@ -52,6 +52,47 @@ of your normal login password:
   option, your organization's admin has to enable "SMTP AUTH" and app
   passwords for your mailbox (Exchange Admin Center → mail flow / Azure AD
   security defaults).
+
+### Why this might get blocked, and how to make sure it doesn't
+
+This tool authenticates to SMTP with a username + app password ("Basic
+Auth"). Microsoft is in the middle of retiring that method for **work/school
+Microsoft 365 accounts** (not personal Outlook.com), so read this before you
+assume a connection failure is a bug in the code:
+
+- **Right now (as of mid-2026)**: Basic Auth for SMTP AUTH still works for
+  Microsoft 365 tenants that have it enabled — nothing changes automatically
+  yet.
+- **End of December 2026**: Microsoft turns SMTP AUTH Basic Auth **off by
+  default** for tenants that haven't been actively using it. Admins can
+  still turn it back on per mailbox.
+- **Later (date TBD, to be announced in H2 2027)**: Microsoft plans to
+  retire it permanently, with no way to re-enable it — at that point
+  sending mail requires OAuth 2.0 (e.g. via the Microsoft Graph API) instead
+  of SMTP + password.
+- Personal Outlook.com/Hotmail accounts are **not** on this deprecation
+  path — app passwords there are expected to keep working.
+
+**What to actually do:**
+
+1. If you're on a **work/school Microsoft 365 account**, go to the Microsoft
+   365 admin center → Active users → your account → **Mail** tab → **Manage
+   email apps** → make sure **"Authenticated SMTP"** is checked, and do this
+   soon (before the Dec 2026 default flip) rather than waiting until it
+   breaks.
+2. If your organization has **Security Defaults** or **Conditional Access**
+   turned on, Basic Auth may be blocked outright regardless of the toggle
+   above — in that case there is no app-password option at all, and this
+   SMTP approach won't work until an admin carves out an exception, or you
+   switch to sending via the Microsoft Graph API (OAuth) instead. Tell me if
+   you hit this and I'll add a Graph API sending path as an alternative.
+3. If you're on **personal Outlook.com**, none of the above applies — an
+   app password from `account.live.com` should keep working.
+4. Regardless of account type, to avoid being flagged/throttled as spammy:
+   don't disable the built-in `SEND_DELAY_SECONDS` throttle, don't send to
+   large lists of unverified/bounced addresses, and keep the unsubscribe
+   link and company address in the footer (both are already built in and
+   required by CAN-SPAM).
 
 ### Run it locally
 
