@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Subscribe{% endblock %}
+{% block content %}
+<div class="center-page">
+  <div class="card">
+    <h1>Subscribe to our newsletter</h1>
+    <p class="muted">Get occasional updates in your inbox. Unsubscribe anytime.</p>
+    <form method="post">
+      <label>Name (optional)</label>
+      <input type="text" name="name" placeholder="Jane Doe">
+      <label>Email</label>
+      <input type="email" name="email" required placeholder="jane@example.com">
+      <div class="actions">
+        <button type="submit">Subscribe</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

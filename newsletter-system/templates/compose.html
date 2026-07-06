@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block title %}Compose{% endblock %}
+{% block content %}
+<h1>Compose newsletter</h1>
+<p class="muted">Fill this in, preview it, send a test to yourself, then send to your list. Currently {{ counts.active }} active subscriber(s).</p>
+
+<form method="post" enctype="multipart/form-data">
+  <div class="card">
+    <h2>Content</h2>
+
+    <label>Template style</label>
+    <select name="template">
+      {% for t in templates %}
+      <option value="{{ t }}" {% if t == form_data.template %}selected{% endif %}>{{ t | capitalize }}</option>
+      {% endfor %}
+    </select>
+
+    <label>Subject line</label>
+    <input type="text" name="subject" value="{{ form_data.subject }}" placeholder="Your July newsletter is here">
+
+    <label>Preheader (short preview text shown next to subject in inbox)</label>
+    <input type="text" name="preheader" value="{{ form_data.preheader }}" placeholder="This month: product updates, tips, and news">
+
+    <label>Headline (large heading inside the email)</label>
+    <input type="text" name="headline" value="{{ form_data.headline }}" placeholder="What's new this month">
+
+    <label>Hero image URL (optional, must be a public image URL — modern template only)</label>
+    <input type="url" name="hero_image_url" value="{{ form_data.hero_image_url }}" placeholder="https://...">
+
+    <label>Body content (HTML allowed — paragraphs, &lt;b&gt;, &lt;a&gt;, &lt;ul&gt;, etc.)</label>
+    <textarea name="body_html" placeholder="&lt;p&gt;Write your update here...&lt;/p&gt;">{{ form_data.body_html }}</textarea>
+
+    <div class="row">
+      <div>
+        <label>Button text (optional)</label>
+        <input type="text" name="cta_text" value="{{ form_data.cta_text }}" placeholder="Read more">
+      </div>
+      <div>
+        <label>Button link (optional)</label>
+        <input type="url" name="cta_url" value="{{ form_data.cta_url }}" placeholder="https://...">
+      </div>
+    </div>
+
+    <div class="actions">
+      <button type="submit" name="action" value="preview" class="secondary">Preview</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Recipients</h2>
+    <div class="radio-group">
+      <label><input type="radio" name="recipients_mode" value="all" {% if form_data.recipients_mode == 'all' %}checked{% endif %}> All active subscribers</label>
+      <label><input type="radio" name="recipients_mode" value="paste" {% if form_data.recipients_mode == 'paste' %}checked{% endif %}> Paste emails</label>
+      <label><input type="radio" name="recipients_mode" value="upload" {% if form_data.recipients_mode == 'upload' %}checked{% endif %}> Upload CSV</label>
+    </div>
+
+    <label>Paste emails (one per line — "email", "Name, email", or "Name &lt;email&gt;")</label>
+    <textarea name="pasted_emails" placeholder="jane@example.com&#10;John Smith, john@example.com">{{ form_data.pasted_emails }}</textarea>
+
+    <label>Or upload a CSV (columns: email, name)</label>
+    <input type="file" name="csv_file" accept=".csv">
+    <p class="muted">Pasted or uploaded addresses are added to your subscriber list automatically, so they'll get an unsubscribe link and won't be double-added next time.</p>
+  </div>
+
+  <div class="card">
+    <h2>Send</h2>
+    <label>Send a test to yourself first</label>
+    <input type="email" name="test_email" placeholder="you@outlook.com">
+    <div class="actions">
+      <button type="submit" name="action" value="send_test" class="secondary">Send test</button>
+      <button type="submit" name="action" value="send_all" onclick="return confirm('Send this newsletter to your selected recipients now?');">Send to recipients</button>
+    </div>
+  </div>
+</form>
+
+{% if preview_html %}
+<div class="card">
+  <h2>Preview</h2>
+  <iframe class="preview-frame" srcdoc="{{ preview_html | e }}"></iframe>
+</div>
+{% endif %}
+{% endblock %}

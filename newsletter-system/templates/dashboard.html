@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h1>Dashboard</h1>
+<p class="muted">Overview of your subscriber list and recent sends.</p>
+
+<div class="card">
+  <h2>Subscribers</h2>
+  <div class="stats">
+    <div class="stat"><div class="num">{{ counts.active }}</div><div class="label">Active</div></div>
+    <div class="stat"><div class="num">{{ counts.unsubscribed }}</div><div class="label">Unsubscribed</div></div>
+    <div class="stat"><div class="num">{{ counts.total }}</div><div class="label">Total ever</div></div>
+  </div>
+  <div class="actions">
+    <a class="btn" href="{{ url_for('compose') }}">Compose newsletter</a>
+  </div>
+</div>
+
+<div class="card">
+  <h2>Recent sends</h2>
+  {% if recent %}
+  <table class="simple">
+    <tr><th>Date</th><th>Subject</th><th>Template</th><th>Sent</th><th>Failed</th></tr>
+    {% for r in recent %}
+    <tr>
+      <td>{{ r.created_at[:16].replace('T', ' ') }}</td>
+      <td>{{ r.subject }}</td>
+      <td>{{ r.template }}</td>
+      <td>{{ r.sent_count }}</td>
+      <td>{{ r.failed_count }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% else %}
+  <p class="muted">No newsletters sent yet.</p>
+  {% endif %}
+</div>
+{% endblock %}

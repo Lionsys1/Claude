@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Unsubscribe{% endblock %}
+{% block content %}
+<div class="center-page">
+  <div class="card">
+    {% if success %}
+    <h1>You've been unsubscribed</h1>
+    <p class="muted">{{ email }} will no longer receive our newsletter. Sorry to see you go.</p>
+    {% else %}
+    <h1>Couldn't process that request</h1>
+    <p class="muted">This unsubscribe link looks invalid or has already been used.</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

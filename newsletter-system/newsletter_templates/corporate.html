@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>{{ subject }}</title>
+<!--[if mso]>
+<noscript>
+<xml>
+<o:OfficeDocumentSettings>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+</noscript>
+<style>table {border-collapse: collapse;}</style>
+<![endif]-->
+<style>
+  body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+  table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+  img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+  body { margin: 0; padding: 0; width: 100% !important; height: 100% !important; background-color: #eef0f2; }
+  @media only screen and (max-width: 600px) {
+    .container { width: 100% !important; }
+    .px-24 { padding-left: 22px !important; padding-right: 22px !important; }
+  }
+</style>
+</head>
+<body style="margin:0;padding:0;background-color:#eef0f2;">
+  <div style="display:none;font-size:1px;color:#eef0f2;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">
+    {{ preheader }}
+  </div>
+
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#eef0f2;">
+    <tr>
+      <td align="center" style="padding:36px 12px;">
+        <table role="presentation" class="container" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:600px;background-color:#ffffff;border-top:4px solid #0f4c81;">
+
+          <!-- Header -->
+          <tr>
+            <td class="px-24" style="padding:28px 32px 20px 32px;font-family:Georgia,'Times New Roman',serif;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="font-size:19px;font-weight:bold;color:#0f2540;">
+                    {{ company_name }}
+                  </td>
+                  <td align="right" style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#8a94a3;text-transform:uppercase;letter-spacing:1px;">
+                    {{ issue_date }}
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr><td class="px-24" style="padding:0 32px;"><hr style="border:none;border-top:1px solid #e2e5ea;margin:0;"></td></tr>
+
+          <!-- Headline -->
+          <tr>
+            <td class="px-24" style="padding:26px 32px 6px 32px;font-family:Georgia,'Times New Roman',serif;">
+              <h1 style="margin:0;font-size:24px;line-height:1.35;color:#0f2540;font-weight:bold;">
+                {{ headline }}
+              </h1>
+            </td>
+          </tr>
+
+          {% if recipient_name %}
+          <tr>
+            <td class="px-24" style="padding:10px 32px 0 32px;font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#55606e;">
+              Dear {{ recipient_name }},
+            </td>
+          </tr>
+          {% endif %}
+
+          <!-- Body -->
+          <tr>
+            <td class="px-24" style="padding:14px 32px 6px 32px;font-family:Arial,Helvetica,sans-serif;font-size:14.5px;line-height:1.7;color:#333d47;">
+              {{ body_html | safe }}
+            </td>
+          </tr>
+
+          {% if cta_text and cta_url %}
+          <tr>
+            <td class="px-24" align="left" style="padding:18px 32px 6px 32px;">
+              <table role="presentation" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td align="center" style="border:1px solid #0f4c81;border-radius:3px;">
+                    <a href="{{ cta_url }}" target="_blank" style="display:inline-block;padding:11px 26px;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#0f4c81;text-decoration:none;">
+                      {{ cta_text }}
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          {% endif %}
+
+          <tr><td class="px-24" style="padding:24px 32px 0 32px;"><hr style="border:none;border-top:1px solid #e2e5ea;margin:0;"></td></tr>
+
+          <!-- Footer -->
+          <tr>
+            <td class="px-24" style="padding:18px 32px 26px 32px;font-family:Arial,Helvetica,sans-serif;font-size:11.5px;line-height:1.6;color:#9aa3af;">
+              You're receiving this email because you subscribed to updates from {{ company_name }}.<br>
+              {{ company_address }}<br>
+              <a href="{{ unsubscribe_url }}" style="color:#6b7280;text-decoration:underline;">Unsubscribe</a>
+              &nbsp;&middot;&nbsp; &copy; {{ year }} {{ company_name }}
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
