@@ -31,14 +31,22 @@ Edit `.env`:
 
 | Variable | What it's for |
 |---|---|
-| `EMAIL_USER` / `EMAIL_PASSWORD` | The Outlook/Office 365 account you'll send from. |
-| `SMTP_HOST` / `SMTP_PORT` | `smtp-mail.outlook.com:587` for a personal Outlook.com/Hotmail account, `smtp.office365.com:587` for a work/school Microsoft 365 account. |
+| `SEND_METHOD` | `smtp` (default) or `graph` — see the two options below. |
+| `EMAIL_USER` | The mailbox you're sending from, either way. |
+| `EMAIL_PASSWORD` | Only for `SEND_METHOD=smtp` — an app password, not your login password. |
+| `SMTP_HOST` / `SMTP_PORT` | Only for `SEND_METHOD=smtp` — `smtp-mail.outlook.com:587` for personal Outlook.com/Hotmail, `smtp.office365.com:587` for work/school Microsoft 365. |
+| `AZURE_TENANT_ID` / `AZURE_CLIENT_ID` / `AZURE_CLIENT_SECRET` | Only for `SEND_METHOD=graph` — from your Entra ID app registration, see below. |
 | `ADMIN_PASSWORD` | Password to log into `/dashboard` and `/compose`. Keep this private — anyone with it can send to your whole list. |
 | `FLASK_SECRET_KEY` | Random string used to sign login sessions. Generate one with `python -c "import secrets; print(secrets.token_hex(32))"`. |
 | `BASE_URL` | The public URL where this app is reachable (see "Deploying" below). Used to build unsubscribe links. |
 | `COMPANY_NAME` / `COMPANY_ADDRESS` | Shown in every email footer — required by the CAN-SPAM Act (see Compliance section). |
 
-### Getting an Outlook / Office 365 app password
+There are two ways this app can actually send mail. Use **Option A** if you
+have (or can get) an app password. Use **Option B** if your Microsoft 365
+tenant blocks that — most work/school tenants with Security Defaults or
+Conditional Access on will.
+
+### Option A: SMTP with an app password (`SEND_METHOD=smtp`)
 
 Outlook and Office 365 usually block plain password SMTP login when
 multi-factor authentication is on, so you'll need an **app password** instead
@@ -93,6 +101,61 @@ assume a connection failure is a bug in the code:
    large lists of unverified/bounced addresses, and keep the unsubscribe
    link and company address in the footer (both are already built in and
    required by CAN-SPAM).
+
+### Option B: Microsoft Graph API / OAuth (`SEND_METHOD=graph`)
+
+Use this if you're an admin and app passwords aren't available (Security
+Defaults / Conditional Access blocking basic auth is the usual reason). This
+registers your own script as a trusted application inside your Microsoft
+365 tenant. Instead of a username + password, it authenticates with a
+Client ID and a secret key, gets a short-lived access token from Microsoft,
+and calls the Graph API directly to send mail — no SMTP, no basic auth, so
+none of the Security Defaults / Conditional Access restrictions apply.
+
+**One-time setup, done by an admin:**
+
+1. Go to **entra.microsoft.com** (or `portal.azure.com` → search "App
+   registrations").
+2. **App registrations → New registration.**
+   - Name: anything, e.g. `Newsletter Sender`.
+   - Supported account types: "Accounts in this organizational directory
+     only" (single tenant).
+   - Click **Register**.
+3. On the app's **Overview** page, copy:
+   - **Application (client) ID** → this is `AZURE_CLIENT_ID`.
+   - **Directory (tenant) ID** → this is `AZURE_TENANT_ID`.
+4. Go to **Certificates & secrets → Client secrets → New client secret**.
+   - Give it a description and expiry (e.g. 12 months — you'll need to
+     rotate it before it expires).
+   - Copy the secret's **Value** immediately — this is `AZURE_CLIENT_SECRET`,
+     and it's only shown once.
+5. Go to **API permissions → Add a permission → Microsoft Graph →
+   Application permissions** (not Delegated) → search "Mail" → check
+   **`Mail.Send`** → **Add permissions**.
+6. Click **Grant admin consent for [your organization]** and confirm. The
+   permission should now show a green checkmark under "Status".
+7. (Recommended, not required to get started) By default `Mail.Send`
+   application permission lets this app send as *any* mailbox in your
+   tenant. To restrict it to only the one newsletter mailbox, run this once
+   in Exchange Online PowerShell (`Connect-ExchangeOnline` first):
+   ```powershell
+   New-ApplicationAccessPolicy -AppId <your-client-id> `
+     -PolicyScopeGroupId <your-sending-mailbox@yourdomain.com> `
+     -AccessRight RestrictAccess `
+     -Description "Newsletter Sender can only send as this one mailbox"
+   ```
+
+8. In `.env`, set:
+   ```
+   SEND_METHOD=graph
+   EMAIL_USER=your-sending-mailbox@yourdomain.com
+   AZURE_TENANT_ID=<from step 3>
+   AZURE_CLIENT_ID=<from step 3>
+   AZURE_CLIENT_SECRET=<from step 4>
+   ```
+
+That's it — no app password, no SMTP host, and it keeps working even after
+Microsoft finishes retiring Basic Auth for SMTP entirely.
 
 ### Run it locally
 
@@ -178,7 +241,7 @@ look before sending internationally at any real volume.
 newsletter-system/
 ├── app.py                    Flask app: routes, auth, recipient handling
 ├── db.py                     SQLite subscriber storage
-├── mailer.py                 Template rendering + SMTP sending
+├── mailer.py                 Template rendering + sending (SMTP or Graph API)
 ├── newsletter_templates/     The actual newsletter HTML (what recipients see)
 │   ├── modern.html
 │   └── corporate.html
