@@ -459,6 +459,60 @@ input, select, textarea, button { font-family: var(--font); }
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
 }
+.competencies-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ── 4-Step Workflow ─────────────────────────────── */
+.workflow-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 56px;
+  position: relative;
+}
+.workflow-step {
+  text-align: center;
+  padding: 0 20px;
+  position: relative;
+}
+.workflow-num {
+  width: 52px;
+  height: 52px;
+  background: var(--navy);
+  color: white;
+  font-size: 22px;
+  font-weight: 900;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 16px rgba(0,45,114,0.25);
+}
+.workflow-connector {
+  position: absolute;
+  top: 26px;
+  left: calc(50% + 26px);
+  right: 0;
+  height: 2px;
+  border-top: 2px dashed var(--gray-100);
+}
+.workflow-connector--last { display: none; }
+.workflow-step h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+  margin-top: 4px;
+}
+.workflow-step p {
+  font-size: 13px;
+  color: var(--gray-600);
+  line-height: 1.65;
+}
 .competency-card {
   background: var(--white);
   border-radius: var(--radius-lg);
@@ -721,9 +775,14 @@ input, select, textarea, button { font-family: var(--font); }
   .testimonials-grid { grid-template-columns: 1fr; }
   .consulting-list { grid-template-columns: 1fr; }
   .competencies-grid { grid-template-columns: repeat(2, 1fr); }
+  .competencies-grid-4 { grid-template-columns: repeat(2, 1fr); }
   .why-lionsys-inner { flex-direction: column; gap: 32px; }
+  .workflow-steps { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .workflow-connector { display: none; }
 }
 @media (max-width: 640px) {
-  .competencies-grid { grid-template-columns: 1fr; }
+  .competencies-grid,
+  .competencies-grid-4 { grid-template-columns: 1fr; }
   .cert-grid { grid-template-columns: repeat(2, 1fr); }
+  .workflow-steps { grid-template-columns: 1fr; }
 }
