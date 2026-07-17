@@ -1052,3 +1052,58 @@ input, select, textarea, button { font-family: var(--font); }
   .values-grid { grid-template-columns: 1fr; }
   .snapshot-grid { grid-template-columns: 1fr; }
 }
+
+/* ── Past Performance Enhancements ──────────────────────── */
+.pp-outcomes { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+.pp-outcomes-row { margin-top: 20px; }
+.pp-outcome { font-size: 12px; color: var(--navy); background: rgba(0,45,114,0.06); padding: 5px 12px; border-radius: 100px; font-weight: 600; }
+.pp-card-full { grid-column: 1 / -1; }
+
+/* Case Management Diagram */
+.cm-diagram { background: #f0f7ff; border: 1px solid rgba(0,87,184,0.15); border-radius: var(--radius-lg); padding: 24px; margin: 20px 0; }
+.cm-title { font-size: 13px; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 20px; text-align: center; }
+.cm-flow { display: flex; align-items: stretch; gap: 0; overflow-x: auto; }
+.cm-step { flex: 1; min-width: 120px; background: var(--white); border-radius: var(--radius); padding: 14px 12px; text-align: center; border: 1px solid var(--border); }
+.cm-step-blue { border-top: 3px solid var(--navy); }
+.cm-step-cyan { border-top: 3px solid var(--cyan); }
+.cm-step-ai { border-top: 3px solid var(--blue); background: rgba(0,87,184,0.03); }
+.cm-step-icon { font-size: 22px; margin-bottom: 8px; }
+.cm-step-label { font-size: 12px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+.cm-step-sub { font-size: 10px; color: var(--gray-600); line-height: 1.5; }
+.cm-arrow { flex-shrink: 0; font-size: 18px; color: var(--blue); padding: 0 4px; display: flex; align-items: center; opacity: 0.5; }
+
+/* ── Resources Page ──────────────────────────────────────── */
+.resource-filter-bar { background: #f8fafc; border-bottom: 1px solid var(--border); padding: 16px 0; }
+.resource-filters { display: flex; gap: 10px; }
+.rf-btn { padding: 7px 18px; border: 1px solid var(--border); border-radius: 100px; font-size: 13px; font-weight: 600; background: var(--white); color: var(--gray-600); cursor: pointer; transition: var(--transition); }
+.rf-btn:hover { border-color: var(--blue); color: var(--blue); }
+.rf-btn-active { background: var(--navy); color: #fff; border-color: var(--navy); }
+
+.resources-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-bottom: 40px; }
+.resource-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; text-decoration: none; color: inherit; transition: var(--transition); display: flex; flex-direction: column; }
+.resource-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--blue); }
+.resource-img { height: 140px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.resource-img img { width: 100%; height: 100%; object-fit: cover; }
+.resource-img-icon { font-size: 48px; opacity: 0.9; }
+.resource-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+.resource-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.resource-type { font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.5px; }
+.resource-type.article { background: rgba(0,87,184,0.1); color: var(--blue); }
+.resource-type.case-study { background: rgba(0,163,224,0.12); color: #0077a8; }
+.resource-topic { font-size: 11px; color: var(--gray-600); font-weight: 600; }
+.resource-body h3 { font-size: 16px; font-weight: 700; color: var(--navy); line-height: 1.45; margin-bottom: 10px; }
+.resource-body p { font-size: 13px; color: var(--gray-600); line-height: 1.7; flex: 1; }
+.resource-read-more { margin-top: 16px; font-size: 13px; font-weight: 700; color: var(--blue); }
+.resource-card:hover .resource-read-more { color: var(--navy); }
+
+.resources-coming-soon { background: var(--navy); border-radius: var(--radius-lg); padding: 32px 40px; display: flex; gap: 20px; align-items: center; color: var(--white); }
+.rcs-icon { font-size: 40px; flex-shrink: 0; }
+.resources-coming-soon h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+.resources-coming-soon p { font-size: 14px; color: rgba(255,255,255,0.78); line-height: 1.65; }
+
+@media (max-width: 900px) {
+  .resources-grid { grid-template-columns: 1fr; }
+  .cm-flow { flex-direction: column; gap: 8px; }
+  .cm-arrow { transform: rotate(90deg); margin: 0 auto; }
+  .pp-card-full { grid-column: 1; }
+}
