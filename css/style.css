@@ -1096,6 +1096,17 @@ input, select, textarea, button { font-family: var(--font); }
 .resource-read-more { margin-top: 16px; font-size: 13px; font-weight: 700; color: var(--blue); }
 .resource-card:hover .resource-read-more { color: var(--navy); }
 
+/* Resource card image overlay + badge */
+.resource-img { position: relative; overflow: hidden; }
+.resource-img img { position: absolute; inset: 0; }
+.resource-img-overlay { position: absolute; inset: 0; display: flex; align-items: flex-end; padding: 12px; }
+.resource-img-badge { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.85); background: rgba(0,0,0,0.35); padding: 3px 10px; border-radius: 100px; backdrop-filter: blur(4px); }
+/* Stats row inside resource cards */
+.resource-stats-row { display: flex; gap: 12px; margin: 14px 0; padding: 14px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.resource-stat { flex: 1; text-align: center; }
+.resource-stat span { display: block; font-size: 16px; font-weight: 900; color: var(--navy); letter-spacing: -0.5px; }
+.resource-stat { font-size: 10px; color: var(--gray-600); line-height: 1.4; }
+
 .resources-coming-soon { background: var(--navy); border-radius: var(--radius-lg); padding: 32px 40px; display: flex; gap: 20px; align-items: center; color: var(--white); }
 .rcs-icon { font-size: 40px; flex-shrink: 0; }
 .resources-coming-soon h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
