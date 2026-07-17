@@ -894,6 +894,26 @@ input, select, textarea, button { font-family: var(--font); }
   .workflow-steps { grid-template-columns: 1fr; }
 }
 
+/* ── Workflow Diagram (About Page) ─────────────────────── */
+.workflow-diagram { display: flex; align-items: flex-start; gap: 0; }
+.wf-step { flex: 1; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px 22px; transition: var(--transition); }
+.wf-step:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--blue); }
+.wf-icon-wrap { position: relative; width: 60px; height: 60px; margin-bottom: 16px; }
+.wf-icon { width: 60px; height: 60px; background: linear-gradient(135deg,var(--navy),var(--blue)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; }
+.wf-num { position: absolute; bottom: -4px; right: -4px; width: 22px; height: 22px; background: var(--cyan); color: var(--navy); border-radius: 50%; font-size: 10px; font-weight: 900; display: flex; align-items: center; justify-content: center; border: 2px solid #fff; }
+.wf-line { height: 3px; background: linear-gradient(90deg,var(--navy),var(--blue)); border-radius: 2px; margin-bottom: 14px; }
+.wf-body h3 { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+.wf-body p { font-size: 13px; color: var(--gray-600); line-height: 1.6; }
+.wf-bullets { list-style: none; padding: 0; margin: 14px 0 0; }
+.wf-bullets li { font-size: 12px; color: var(--gray-600); padding: 3px 0 3px 16px; position: relative; }
+.wf-bullets li::before { content: '✓'; position: absolute; left: 0; color: var(--cyan); font-weight: 700; }
+.wf-arrow { flex-shrink: 0; font-size: 22px; color: var(--blue); margin-top: 28px; padding: 0 8px; opacity: 0.6; }
+@media (max-width: 900px) {
+  .workflow-diagram { flex-direction: column; gap: 0; }
+  .wf-arrow { transform: rotate(90deg); margin: 4px auto; }
+  .wf-step { width: 100%; }
+}
+
 /* ── Compact Cert Cards (Home Page) ────────────────────── */
 .cert-cards-section { padding: 48px 0; background: #f8fafc; }
 .cert-grid-compact { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
