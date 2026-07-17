@@ -52,6 +52,20 @@
   </div>
 </section>
 
+<!-- Intro Banner -->
+<section class="contact-intro-banner">
+  <div class="container">
+    <div class="contact-intro-inner">
+      <div class="contact-intro-text">
+        <p>Whether it's streamlining systems, building custom platforms, or scaling your digital presence, we've got the tools and the talent. If you're looking for innovative tech solutions that actually solve problems and not create more — you're in the right place. Let's connect and turn your vision into a smart, scalable reality.</p>
+      </div>
+      <div class="contact-intro-quote">
+        <blockquote>"Supporting government and enterprise clients throughout the DMV region"</blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section">
   <div class="container">
     <div class="contact-grid">
@@ -125,32 +139,39 @@
             </div>
           </div>
 
-          <div class="form-group">
-            <label for="org">Organization / Agency</label>
-            <input type="text" id="org" name="org" placeholder="Your organization or agency">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="org">Organization Name</label>
+              <input type="text" id="org" name="org" placeholder="Your organization or agency">
+            </div>
+            <div class="form-group">
+              <label for="website">Website (if any)</label>
+              <input type="url" id="website" name="website" placeholder="https://yoursite.com">
+            </div>
           </div>
 
           <div class="form-group">
             <label for="interest">Area of Interest</label>
             <select id="interest" name="interest">
               <option value="">Select one...</option>
-              <option value="cloud">Cloud Migration</option>
-              <option value="cyber">Cybersecurity</option>
-              <option value="devsecops">DevSecOps</option>
-              <option value="digital">Digital Transformation</option>
-              <option value="managed">IT Managed Services</option>
               <option value="ai">AI &amp; Data Solutions</option>
+              <option value="cyber">Cybersecurity &amp; Compliance</option>
+              <option value="digital">Digital Transformation</option>
+              <option value="cloud">Cloud Migration</option>
+              <option value="devsecops">DevSecOps</option>
+              <option value="managed">IT Managed Services</option>
               <option value="contracts">Contract Vehicles / Procurement</option>
               <option value="general">General Inquiry</option>
             </select>
           </div>
 
           <div class="form-group">
-            <label for="message">How can we help? *</label>
-            <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project, timeline, and any specific requirements..."></textarea>
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project, timeline, and any specific requirements..." maxlength="1000" oninput="document.getElementById('msgCount').textContent=this.value.length"></textarea>
+            <div class="form-char-count"><span id="msgCount">0</span> / 1000</div>
           </div>
 
-          <button class="form-submit" type="submit">Send Message →</button>
+          <button class="form-submit" type="submit">Submit →</button>
 
         </form>
       </div>
@@ -177,19 +198,23 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
-          <li><a href="capabilities.html">Capabilities</a></li>
+          <li><a href="capabilities.html">Services</a></li>
           <li><a href="contract-vehicles.html">Contract Vehicles</a></li>
+          <li><a href="resources.html">Resources</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Services</h4>
         <ul>
-          <li><a href="capabilities.html">Cloud Migration</a></li>
-          <li><a href="capabilities.html">Cybersecurity</a></li>
-          <li><a href="capabilities.html">DevSecOps</a></li>
-          <li><a href="capabilities.html">Digital Transformation</a></li>
-          <li><a href="capabilities.html">AI &amp; Data Solutions</a></li>
+          <li><a href="svc-data-integration.html">Data Integration</a></li>
+          <li><a href="svc-digital-services.html">Digital Services</a></li>
+          <li><a href="svc-ai-solutions.html">AI Solutions</a></li>
+          <li><a href="svc-government-enterprise.html">Government &amp; Enterprise</a></li>
+          <li><a href="svc-security-compliance.html">Security &amp; Compliance</a></li>
+          <li><a href="svc-talent-workforce.html">Talent &amp; Workforce</a></li>
+          <li><a href="svc-agile-ai-pods.html">Agile AI Team Pods</a></li>
+          <li><a href="svc-technical-due-diligence.html">Tech Due Diligence</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -198,7 +223,6 @@
           <li><a href="mailto:Info@lionsyssolutions.com">Info@lionsyssolutions.com</a></li>
           <li><a href="tel:2406212687">(240)-621-2687</a></li>
           <li><a href="https://www.linkedin.com/company/lionsys" target="_blank">LinkedIn</a></li>
-          <li><a href="https://lionsyssolutions.com">lionsyssolutions.com</a></li>
         </ul>
       </div>
     </div>

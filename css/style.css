@@ -1119,6 +1119,17 @@ input, select, textarea, button { font-family: var(--font); }
   .pp-card-full { grid-column: 1; }
 }
 
+/* ── Contact Page ────────────────────────────────────────── */
+.contact-intro-banner { background: linear-gradient(135deg,#001233 0%,#002D72 60%,#0057B8 100%); padding: 48px 0; }
+.contact-intro-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.contact-intro-text p { font-size: 16px; color: rgba(255,255,255,0.82); line-height: 1.75; margin: 0; }
+.contact-intro-quote blockquote { font-size: 20px; font-weight: 700; color: var(--cyan); line-height: 1.5; margin: 0; padding-left: 20px; border-left: 3px solid var(--cyan); font-style: italic; }
+.form-char-count { font-size: 11px; color: var(--gray-600); text-align: right; margin-top: 4px; }
+@media (max-width: 768px) {
+  .contact-intro-inner { grid-template-columns: 1fr; gap: 20px; }
+  .contact-intro-quote blockquote { font-size: 17px; }
+}
+
 /* ── NIST AI RMF Mini Diagram (resource card image) ─────── */
 .nist-mini { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; width: 100%; height: 100%; padding: 14px; box-sizing: border-box; }
 .nist-mini-node { border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 9px; font-weight: 800; color: rgba(255,255,255,0.9); text-transform: uppercase; letter-spacing: 0.8px; }
