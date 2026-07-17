@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Enabled Billing Automation & Program Integrity | Lionsys Solutions</title>
+  <meta name="description" content="How Lionsys modernized a high-volume licensing and claims environment with AI-enabled billing automation, EDI standardization, and real-time compliance dashboards.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .article-wrap { max-width: 820px; margin: 0 auto; }
+    .article-header { padding: 56px 0 40px; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+    .article-meta-row { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+    .article-type-badge { font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .article-type-badge.article { background: rgba(0,87,184,0.1); color: var(--blue); }
+    .article-type-badge.case-study { background: rgba(0,163,224,0.12); color: #0077a8; }
+    .article-topic-label { font-size: 12px; color: var(--gray-600); font-weight: 600; }
+    .article-date { font-size: 12px; color: var(--gray-600); }
+    .article-header h1 { font-size: clamp(24px,4vw,36px); font-weight: 800; color: var(--navy); line-height: 1.3; margin-bottom: 16px; }
+    .article-lead { font-size: 18px; color: var(--gray-600); line-height: 1.7; font-weight: 400; }
+    .article-hero-img { width: 100%; height: 320px; object-fit: cover; border-radius: var(--radius-lg); margin-bottom: 40px; }
+    .article-body h2 { font-size: 22px; font-weight: 800; color: var(--navy); margin: 36px 0 14px; }
+    .article-body h3 { font-size: 17px; font-weight: 700; color: var(--navy); margin: 24px 0 10px; }
+    .article-body p { font-size: 15px; color: var(--gray-700, #374151); line-height: 1.8; margin-bottom: 16px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 16px; }
+    .article-body li { font-size: 15px; color: var(--gray-700, #374151); line-height: 1.75; margin-bottom: 6px; }
+    .article-stat-row { display: flex; gap: 24px; background: #f0f5ff; border-radius: var(--radius-lg); padding: 24px; margin: 28px 0; flex-wrap: wrap; }
+    .article-stat { text-align: center; flex: 1; min-width: 100px; }
+    .article-stat .num { font-size: 28px; font-weight: 900; color: var(--navy); display: block; }
+    .article-stat .lbl { font-size: 12px; color: var(--gray-600); line-height: 1.4; }
+    .article-callout { background: linear-gradient(135deg,#001233,#002D72); border-radius: var(--radius-lg); padding: 28px 32px; color: white; margin: 32px 0; }
+    .article-callout h4 { font-size: 16px; font-weight: 800; color: var(--cyan); margin-bottom: 10px; }
+    .article-callout p { font-size: 14px; color: rgba(255,255,255,0.82); line-height: 1.65; margin: 0; }
+    .article-back { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: var(--blue); text-decoration: none; margin-bottom: 32px; }
+    .article-back:hover { color: var(--navy); }
+    .article-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 32px 0 0; }
+    .article-tag { font-size: 12px; background: #f0f5ff; color: var(--navy); padding: 5px 14px; border-radius: 100px; font-weight: 600; }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/images/logo.png" alt="Lionsys" onerror="this.style.display='none'">
+        <span class="nav-logo-text">LION<span>SYS</span></span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <div class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <div class="nav-dropdown-wrap">
+          <a href="capabilities.html" class="nav-link nav-has-dropdown">Services</a>
+          <div class="nav-dropdown">
+            <a href="svc-data-integration.html">Data Integration &amp; Automation</a>
+            <a href="svc-digital-services.html">Digital Services &amp; Strategy</a>
+            <a href="svc-ai-solutions.html">AI &amp; Intelligence Solutions</a>
+            <a href="svc-government-enterprise.html">Government &amp; Enterprise</a>
+            <a href="svc-security-compliance.html">Security &amp; Compliance</a>
+            <a href="svc-talent-workforce.html">Talent &amp; Workforce Solutions</a>
+            <a href="svc-agile-ai-pods.html">Agile AI Engineering Team Pods</a>
+            <a href="svc-technical-due-diligence.html">Technical Due Diligence</a>
+          </div>
+        </div>
+        <a href="contract-vehicles.html" class="nav-link">Contracting Hub</a>
+        <a href="resources.html" class="nav-link active">Resources</a>
+        <a href="contact.html" class="btn btn-primary nav-cta">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="article-wrap">
+      <a href="resources.html" class="article-back">← Back to Resources</a>
+      <div class="article-header">
+        <div class="article-meta-row">
+          <span class="article-type-badge case-study">Case Study</span>
+          <span class="article-topic-label">Financial Services &amp; Compliance</span>
+          <span class="article-date">April 24, 2026</span>
+        </div>
+        <h1>AI-Enabled Billing Automation &amp; Program Integrity: How Lionsys Modernized a High-Volume Licensing and Claims Environment</h1>
+        <p class="article-lead">A financial services organization managing regulated licensing and payment programs across multiple jurisdictions faced fragmented systems, manual billing intake, and no unified compliance view.</p>
+      </div>
+      <img class="article-hero-img" src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=80&auto=format&fit=crop" alt="Financial services data and billing compliance dashboard" loading="lazy">
+      <div class="article-stat-row">
+        <div class="article-stat">
+          <span class="num">~30%</span>
+          <span class="lbl">reduction in manual processing</span>
+        </div>
+        <div class="article-stat">
+          <span class="num">~20%</span>
+          <span class="lbl">improvement in reconciliation timelines</span>
+        </div>
+        <div class="article-stat">
+          <span class="num">↓ Error</span>
+          <span class="lbl">decrease in duplicate transactions</span>
+        </div>
+      </div>
+      <div class="article-body">
+        <h2>The Challenge</h2>
+        <p>The organization operated licensing and payment programs across multiple state jurisdictions, each with distinct regulatory requirements, billing formats, and reconciliation workflows. What had grown organically over years into a patchwork of disconnected systems — separate databases for different program types, manual intake processes for billing submissions, and spreadsheet-driven reconciliation — had become a significant operational liability.</p>
+        <p>Staff spent substantial portions of their workweek manually validating billing records, cross-referencing duplicate entries across systems, and producing compliance reports that were already outdated by the time they were distributed. Without a unified compliance view, anomalies often went undetected until they had cascaded into larger discrepancies. Audit readiness required days of manual preparation rather than on-demand reporting.</p>
+        <p>Three core problems required immediate attention:</p>
+        <ul>
+          <li>Fragmented billing intake with no standardized format across jurisdictions, leading to high error rates at ingestion</li>
+          <li>No cross-jurisdiction visibility into payment status, outstanding liabilities, or reconciliation exceptions</li>
+          <li>Manual reconciliation cycles that introduced delay, inconsistency, and human error into what should have been deterministic financial processes</li>
+        </ul>
+
+        <h2>The Approach</h2>
+        <p>Lionsys began with a structured discovery phase, mapping each billing data flow from intake to reconciliation to reporting. Rather than overlaying automation onto the existing fragmented architecture, we identified the transformation points where standardization would deliver the highest compounding value.</p>
+        <p>The technical approach rested on four pillars:</p>
+        <ul>
+          <li><strong>EDI Standardization</strong> — implementing X12 EDI transaction sets to establish consistent billing submission formats across all jurisdictions, eliminating format variance at the intake layer</li>
+          <li><strong>Automated Validation Rules</strong> — building a configurable rule engine that validated billing submissions against program-specific business rules at ingestion, rejecting or flagging non-conforming records before they entered the core processing pipeline</li>
+          <li><strong>AI-Driven Anomaly Detection</strong> — deploying machine learning models trained on historical billing patterns to identify statistical outliers, including duplicate transactions, unusual billing volumes, and jurisdiction-level variances that fell outside expected parameters</li>
+          <li><strong>Integrated Data Pipelines</strong> — constructing automated ETL pipelines that consolidated data from disparate source systems into a unified processing layer, enabling cross-system reconciliation without manual data extraction</li>
+        </ul>
+
+        <h2>What We Built</h2>
+        <p>The delivered solution centered on three interconnected capabilities that transformed how the organization managed billing integrity and compliance reporting.</p>
+        <p>The <strong>real-time compliance dashboard</strong> provided program managers with a unified view of billing status, reconciliation exceptions, and payment activity across all jurisdictions. Previously a days-long reporting preparation process became a live operational view refreshed on a defined schedule, with drill-down capability to the transaction level for exception investigation.</p>
+        <p>The <strong>automated duplicate detection engine</strong> applied a multi-factor matching algorithm that identified duplicate billing submissions across jurisdictions, time periods, and billing codes — a class of error that manual review frequently missed due to the volume of records involved. Detected duplicates were quarantined for human review rather than auto-rejected, preserving analyst judgment while eliminating the need to search for duplicates manually.</p>
+        <p>The <strong>cross-system reconciliation engine</strong> automated the matching of payments received against billing records across all source systems, generating exception reports for unmatched items and producing reconciliation summaries that previously required manual assembly. The engine ran on a configurable schedule and produced structured outputs compatible with the organization's audit and reporting requirements.</p>
+
+        <h2>The Results</h2>
+        <p>Across the key operational metrics the organization tracked, the impact was measurable and sustained. Manual processing volume fell by approximately 30% as automated validation, anomaly detection, and reconciliation absorbed work that had previously required human effort at each step. Reconciliation cycle times improved by approximately 20%, with the largest gains in cross-jurisdiction payment matching where manual coordination had been the primary bottleneck.</p>
+        <p>Duplicate transaction rates declined to near-zero for the transaction categories covered by the automated detection engine, reducing both financial exposure and the downstream compliance work that duplicate records generated. Perhaps most significantly, the organization shifted from reactive compliance management — responding to problems identified through audit — to proactive compliance management, where anomalies are surfaced in the dashboard before they compound.</p>
+        <p>Audit preparation time collapsed from days to hours, as the compliance dashboard and reconciliation engine produce audit-ready outputs as a byproduct of normal operation rather than as a separate preparation exercise.</p>
+
+        <h2>Key Takeaways for Financial Services</h2>
+        <p>This engagement surfaced several principles applicable to financial services organizations managing high-volume regulated programs:</p>
+        <ul>
+          <li>Standardization at the intake layer delivers compounding value — every downstream process becomes more reliable when the input data is consistent</li>
+          <li>AI anomaly detection works best when trained on organization-specific historical patterns rather than generic financial models; the specificity of the training data directly determines detection precision</li>
+          <li>Audit readiness should be a byproduct of normal operations, not a periodic preparation exercise — systems that produce audit-ready outputs continuously reduce compliance risk and operational cost simultaneously</li>
+          <li>Cross-jurisdiction compliance programs require a unified data model that can accommodate jurisdictional variance while maintaining consistent reporting structures at the program level</li>
+        </ul>
+        <div class="article-callout">
+          <h4>Program Integrity at Scale</h4>
+          <p>Lionsys brings deep experience modernizing regulated billing and payment environments. If your organization is managing high-volume programs across multiple jurisdictions with fragmented systems, the cost of inaction compounds with every billing cycle.</p>
+        </div>
+      </div>
+      <div class="article-tags">
+        <span class="article-tag">Billing Automation</span>
+        <span class="article-tag">Program Integrity</span>
+        <span class="article-tag">EDI</span>
+        <span class="article-tag">AI Anomaly Detection</span>
+        <span class="article-tag">Financial Services</span>
+        <span class="article-tag">Compliance</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-inner text-center">
+      <h2>Ready to Apply These Insights?</h2>
+      <p>Let's talk about how AI, automation, and data strategy can transform your organization. Our team is ready to help you move from ideas to outcomes.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-white btn-lg">Talk to Our Team</a>
+        <a href="resources.html" class="btn btn-outline btn-lg">More Resources</a>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-logo">LION<span>SYS</span></div>
+        <p>Delivering innovative IT solutions that drive digital transformation for businesses and organizations across all sectors. Making IT Possible With Synergy.</p>
+        <div class="footer-badges">
+          <span class="footer-badge">WOSB</span>
+          <span class="footer-badge">EDWOSB</span>
+          <span class="footer-badge">HUBZone</span>
+          <span class="footer-badge">Women Owned</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="capabilities.html">Services</a></li>
+          <li><a href="contract-vehicles.html">Contracting Hub</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="svc-data-integration.html">Data Integration</a></li>
+          <li><a href="svc-digital-services.html">Digital Services</a></li>
+          <li><a href="svc-ai-solutions.html">AI Solutions</a></li>
+          <li><a href="svc-government-enterprise.html">Government &amp; Enterprise</a></li>
+          <li><a href="svc-security-compliance.html">Security &amp; Compliance</a></li>
+          <li><a href="svc-talent-workforce.html">Talent &amp; Workforce</a></li>
+          <li><a href="svc-agile-ai-pods.html">Agile AI Team Pods</a></li>
+          <li><a href="svc-technical-due-diligence.html">Tech Due Diligence</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:Info@lionsyssolutions.com">Info@lionsyssolutions.com</a></li>
+          <li><a href="tel:2406212687">(240)-621-2687</a></li>
+          <li><a href="https://www.linkedin.com/company/lionsys" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Lionsys Solutions LLC. All rights reserved.</p>
+      <p>Making IT Possible With Synergy</p>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
