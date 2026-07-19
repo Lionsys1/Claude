@@ -1122,6 +1122,78 @@ input, select, textarea, button { font-family: var(--font); }
   .pp-card-full { grid-column: 1; }
 }
 
+/* ── AI Solutions Page ───────────────────────────────────── */
+.ai-models-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.ai-model-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; transition: var(--transition); }
+.ai-model-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--blue); }
+.ai-model-icon { font-size: 32px; margin-bottom: 14px; }
+.ai-model-card h3 { font-size: 17px; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+.ai-model-card p { font-size: 13px; color: var(--gray-600); line-height: 1.7; margin-bottom: 14px; }
+.ai-model-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.ai-model-tags span { font-size: 11px; font-weight: 700; background: rgba(0,87,184,0.08); color: var(--blue); padding: 3px 10px; border-radius: 100px; }
+
+/* AI Journey / Plan-to-Deploy workflow */
+.ai-journey { display: flex; align-items: stretch; gap: 0; overflow-x: auto; padding-bottom: 8px; }
+.ai-journey-step { flex: 1; min-width: 170px; background: var(--white); border: 1px solid var(--border); border-top: 4px solid var(--navy); border-radius: var(--radius-lg); padding: 24px 18px; }
+.ai-journey-step:nth-child(1) { border-top-color: #001233; }
+.ai-journey-step:nth-child(3) { border-top-color: var(--navy); }
+.ai-journey-step:nth-child(5) { border-top-color: var(--blue); }
+.ai-journey-step:nth-child(7) { border-top-color: var(--cyan); }
+.ai-journey-step:nth-child(9) { border-top-color: #00a3e0; }
+.ai-journey-num { font-size: 10px; font-weight: 900; color: var(--cyan); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+.ai-journey-icon { font-size: 28px; margin-bottom: 10px; }
+.ai-journey-step h3 { font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+.ai-journey-step p { font-size: 12px; color: var(--gray-600); line-height: 1.6; margin-bottom: 12px; }
+.ai-journey-list { list-style: none; padding: 0; margin: 0; }
+.ai-journey-list li { font-size: 11px; color: var(--gray-600); padding: 3px 0 3px 14px; position: relative; }
+.ai-journey-list li::before { content: '→'; position: absolute; left: 0; color: var(--cyan); font-weight: 700; }
+.ai-journey-arrow { flex-shrink: 0; font-size: 20px; color: var(--blue); padding: 0 6px; display: flex; align-items: center; opacity: 0.45; }
+
+/* Methodologies */
+.ai-method-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.ai-method-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px; }
+.ai-method-badge { display: inline-block; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; background: var(--navy); color: #fff; padding: 5px 14px; border-radius: 100px; margin-bottom: 16px; }
+.ai-method-card h3 { font-size: 18px; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+.ai-method-card p { font-size: 14px; color: var(--gray-600); line-height: 1.7; margin-bottom: 18px; }
+.ai-method-flow { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; color: var(--blue); }
+.mf-arrow { color: var(--gray-600); font-weight: 400; }
+.ai-method-features div { font-size: 13px; color: var(--gray-600); padding: 4px 0; }
+.ai-method-features div strong { color: var(--navy); }
+
+/* Core Capabilities + Strategic Approach split */
+.ai-cap-split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.ai-cap-list { display: flex; flex-direction: column; gap: 20px; }
+.ai-cap-item { display: flex; gap: 14px; align-items: flex-start; }
+.ai-cap-dot { width: 8px; height: 8px; background: var(--cyan); border-radius: 50%; flex-shrink: 0; margin-top: 6px; }
+.ai-cap-item strong { display: block; font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+.ai-cap-item p { font-size: 13px; color: var(--gray-600); line-height: 1.65; margin: 0; }
+.ai-approach-list { display: flex; flex-direction: column; gap: 18px; }
+.ai-approach-item { display: flex; gap: 14px; align-items: flex-start; }
+.ai-approach-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+.ai-approach-item strong { display: block; font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+.ai-approach-item p { font-size: 13px; color: var(--gray-600); line-height: 1.65; margin: 0; }
+
+/* Outcomes */
+.ai-outcomes-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.ai-outcome-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; text-align: center; transition: var(--transition); }
+.ai-outcome-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.ai-outcome-icon { font-size: 32px; margin-bottom: 12px; }
+.ai-outcome-card h3 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.ai-outcome-card p { font-size: 13px; color: var(--gray-600); line-height: 1.65; }
+
+@media (max-width: 1024px) {
+  .ai-models-grid { grid-template-columns: 1fr 1fr; }
+  .ai-outcomes-grid { grid-template-columns: 1fr 1fr; }
+  .ai-cap-split { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 768px) {
+  .ai-models-grid { grid-template-columns: 1fr; }
+  .ai-method-grid { grid-template-columns: 1fr; }
+  .ai-journey { flex-direction: column; gap: 8px; }
+  .ai-journey-arrow { transform: rotate(90deg); margin: 0 auto; }
+  .ai-outcomes-grid { grid-template-columns: 1fr 1fr; }
+}
+
 /* ── At a Glance Snapshot Table ─────────────────────────── */
 .snapshot-table-wrap { overflow-x: auto; }
 .snapshot-table { width: 100%; border-collapse: collapse; font-size: 14px; }
