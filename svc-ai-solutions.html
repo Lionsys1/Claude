@@ -85,48 +85,18 @@
 <!-- AI Model Types -->
 <section class="section section-gray">
   <div class="container">
-    <div class="text-center" style="margin-bottom:48px;">
+    <div style="margin-bottom:28px;">
       <span class="label">AI Technologies</span>
-      <h2 class="section-title">AI Models &amp; Architectures We Deploy</h2>
+      <h2 class="section-title" style="margin-bottom:8px;">AI Models &amp; Architectures We Deploy</h2>
       <p class="section-sub">From foundational models to production-grade autonomous agents — we select and deploy the right AI architecture for your use case.</p>
     </div>
-    <div class="ai-models-grid">
-      <div class="ai-model-card reveal">
-        <div class="ai-model-icon">🤖</div>
-        <h3>AI Agents</h3>
-        <p>Autonomous agents that plan, reason, and execute multi-step tasks — integrated with your tools, databases, and APIs to drive end-to-end workflow automation.</p>
-        <div class="ai-model-tags"><span>LangGraph</span><span>AutoGen</span><span>CrewAI</span></div>
-      </div>
-      <div class="ai-model-card reveal">
-        <div class="ai-model-icon">📚</div>
-        <h3>RAG Models</h3>
-        <p>Retrieval-Augmented Generation systems that ground LLM responses in your proprietary documents, databases, and knowledge bases — eliminating hallucinations and enabling accurate, citable answers.</p>
-        <div class="ai-model-tags"><span>Vector DB</span><span>LlamaIndex</span><span>Pinecone</span></div>
-      </div>
-      <div class="ai-model-card reveal">
-        <div class="ai-model-icon">🧠</div>
-        <h3>Large Language Models</h3>
-        <p>Custom fine-tuning and enterprise integration of leading LLMs — GPT-4o, Claude, Llama 3, and Mistral — deployed securely on Azure, AWS, or on-premises infrastructure.</p>
-        <div class="ai-model-tags"><span>GPT-4o</span><span>Claude</span><span>Llama 3</span></div>
-      </div>
-      <div class="ai-model-card reveal">
-        <div class="ai-model-icon">📊</div>
-        <h3>Predictive ML Models</h3>
-        <p>Custom classification, regression, anomaly detection, and forecasting models built on your data — trained, validated, and deployed with full MLOps pipelines for continuous improvement.</p>
-        <div class="ai-model-tags"><span>XGBoost</span><span>SageMaker</span><span>MLflow</span></div>
-      </div>
-      <div class="ai-model-card reveal">
-        <div class="ai-model-icon">💬</div>
-        <h3>Conversational AI</h3>
-        <p>Intelligent virtual assistants and chatbots that handle complex, context-aware conversations — integrated with your CRM, ticketing, and service management platforms.</p>
-        <div class="ai-model-tags"><span>Azure Bot</span><span>Dialogflow</span><span>Rasa</span></div>
-      </div>
-      <div class="ai-model-card reveal">
-        <div class="ai-model-icon">🔍</div>
-        <h3>Computer Vision &amp; NLP</h3>
-        <p>Document intelligence, image classification, OCR, and semantic text analysis — powering intelligent document processing, compliance review, and unstructured data extraction.</p>
-        <div class="ai-model-tags"><span>Hugging Face</span><span>PyTorch</span><span>OpenCV</span></div>
-      </div>
+    <div class="svc-benefits" style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px 40px;">
+      <div class="svc-benefit"><span>✓</span> AI Agents — autonomous multi-step task execution (LangGraph, AutoGen, CrewAI)</div>
+      <div class="svc-benefit"><span>✓</span> RAG Models — grounded LLM responses from your documents (LlamaIndex, Pinecone)</div>
+      <div class="svc-benefit"><span>✓</span> Large Language Models — GPT-4o, Claude, Llama 3, Mistral on Azure / AWS / on-prem</div>
+      <div class="svc-benefit"><span>✓</span> Predictive ML Models — classification, regression, anomaly detection (XGBoost, MLflow)</div>
+      <div class="svc-benefit"><span>✓</span> Conversational AI — context-aware virtual assistants (Azure Bot, Dialogflow, Rasa)</div>
+      <div class="svc-benefit"><span>✓</span> Computer Vision &amp; NLP — document intelligence, OCR, semantic analysis (Hugging Face)</div>
     </div>
   </div>
 </section>
@@ -211,52 +181,37 @@
 <!-- Methodologies -->
 <section class="section section-gray">
   <div class="container">
-    <div class="text-center" style="margin-bottom:48px;">
+    <div style="margin-bottom:28px;">
       <span class="label">Frameworks</span>
-      <h2 class="section-title">Methodologies That Drive Results</h2>
+      <h2 class="section-title" style="margin-bottom:8px;">Methodologies That Drive Results</h2>
     </div>
-    <div class="ai-method-grid">
-      <div class="ai-method-card reveal">
-        <div class="ai-method-badge">CRISP-DM</div>
-        <h3>Cross-Industry Standard Process for Data Mining</h3>
-        <p>A widely used framework for data analytics and AI projects. Lionsys applies CRISP-DM to provide a structured, repeatable approach to AI modernization.</p>
-        <div class="ai-method-flow">
-          <span>Business Understanding</span><span class="mf-arrow">→</span>
-          <span>Data Understanding</span><span class="mf-arrow">→</span>
-          <span>Data Preparation</span><span class="mf-arrow">→</span>
-          <span>Modeling</span><span class="mf-arrow">→</span>
-          <span>Evaluation &amp; Deployment</span>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;">
+      <div>
+        <h4 style="font-size:13px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;">CRISP-DM — Cross-Industry Standard Process for Data Mining</h4>
+        <div class="svc-benefits">
+          <div class="svc-benefit"><span>✓</span> Business Understanding &amp; goal setting</div>
+          <div class="svc-benefit"><span>✓</span> Data Understanding &amp; exploration</div>
+          <div class="svc-benefit"><span>✓</span> Data Preparation &amp; engineering</div>
+          <div class="svc-benefit"><span>✓</span> Modeling, Evaluation &amp; Deployment</div>
         </div>
       </div>
-      <div class="ai-method-card reveal">
-        <div class="ai-method-badge">DAMA-DMBOK</div>
-        <h3>Data Management Body of Knowledge + AI Layer</h3>
-        <p>A governance-first model for enterprise data management. We combine DAMA principles with an AI-driven layer to enable proactive, intelligent data operations.</p>
-        <div class="ai-method-features">
-          <div>✓ Data quality &amp; metadata management</div>
-          <div>✓ AI-driven data profiling &amp; lineage tracking</div>
-          <div>✓ Security, compliance &amp; access governance</div>
-          <div>✓ Compliance scoring &amp; audit readiness</div>
+      <div>
+        <h4 style="font-size:13px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;">DAMA-DMBOK — Data Management Body of Knowledge + AI Layer</h4>
+        <div class="svc-benefits">
+          <div class="svc-benefit"><span>✓</span> Data quality &amp; metadata management</div>
+          <div class="svc-benefit"><span>✓</span> AI-driven data profiling &amp; lineage tracking</div>
+          <div class="svc-benefit"><span>✓</span> Security, compliance &amp; access governance</div>
+          <div class="svc-benefit"><span>✓</span> Compliance scoring &amp; audit readiness</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Core Capabilities + Strategic Approach -->
+<!-- Strategic Approach + Outcomes -->
 <section class="section">
   <div class="container">
     <div class="ai-cap-split">
-      <div class="reveal">
-        <span class="label">Core Capabilities</span>
-        <h2 style="font-size:1.6rem;font-weight:800;color:var(--navy);margin:12px 0 20px;">What We Build</h2>
-        <div class="ai-cap-list">
-          <div class="ai-cap-item"><div class="ai-cap-dot"></div><div><strong>Machine Learning &amp; Predictive Analytics</strong><p>Classification, regression, forecasting, and anomaly detection models trained on your data.</p></div></div>
-          <div class="ai-cap-item"><div class="ai-cap-dot"></div><div><strong>Natural Language Processing (NLP)</strong><p>Document intelligence, sentiment analysis, entity extraction, and semantic search.</p></div></div>
-          <div class="ai-cap-item"><div class="ai-cap-dot"></div><div><strong>AI Chatbots &amp; Virtual Assistants</strong><p>Context-aware, multi-turn conversational AI integrated with your enterprise systems.</p></div></div>
-          <div class="ai-cap-item"><div class="ai-cap-dot"></div><div><strong>Cognitive Automation</strong><p>AI-driven process automation that handles judgment-based tasks — not just rule-based workflows.</p></div></div>
-        </div>
-      </div>
       <div class="reveal">
         <span class="label">Strategic Approach</span>
         <h2 style="font-size:1.6rem;font-weight:800;color:var(--navy);margin:12px 0 20px;">How We Work</h2>
@@ -279,22 +234,16 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- Outcomes -->
-<section class="section section-gray">
-  <div class="container">
-    <div class="text-center" style="margin-bottom:40px;">
-      <span class="label">Outcomes</span>
-      <h2 class="section-title">What AI Delivers for Your Organization</h2>
-    </div>
-    <div class="ai-outcomes-grid">
-      <div class="ai-outcome-card reveal"><div class="ai-outcome-icon">💡</div><h3>Smarter Decision-Making</h3><p>Real-time analytics and predictive insights replace gut-feel decisions with data-backed confidence.</p></div>
-      <div class="ai-outcome-card reveal"><div class="ai-outcome-icon">🤝</div><h3>Enhanced Customer Interactions</h3><p>Conversational AI and personalization engines create faster, more relevant experiences at every touchpoint.</p></div>
-      <div class="ai-outcome-card reveal"><div class="ai-outcome-icon">💰</div><h3>Cost Savings Through Automation</h3><p>Intelligent automation of labor-intensive tasks reduces operational costs while improving accuracy and throughput.</p></div>
-      <div class="ai-outcome-card reveal"><div class="ai-outcome-icon">🏆</div><h3>Competitive Advantage</h3><p>Organizations that embed AI into core operations consistently outperform competitors on speed, quality, and innovation.</p></div>
+      <div class="reveal">
+        <span class="label">Outcomes</span>
+        <h2 style="font-size:1.6rem;font-weight:800;color:var(--navy);margin:12px 0 20px;">What AI Delivers</h2>
+        <div class="svc-benefits">
+          <div class="svc-benefit"><span>✓</span> <strong>Smarter Decision-Making</strong> — real-time analytics and predictive insights replace gut-feel with data-backed confidence</div>
+          <div class="svc-benefit"><span>✓</span> <strong>Enhanced Customer Interactions</strong> — conversational AI and personalization at every touchpoint</div>
+          <div class="svc-benefit"><span>✓</span> <strong>Cost Savings Through Automation</strong> — reduce operational costs while improving accuracy and throughput</div>
+          <div class="svc-benefit"><span>✓</span> <strong>Competitive Advantage</strong> — outperform on speed, quality, and innovation by embedding AI into core operations</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
