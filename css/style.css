@@ -970,7 +970,7 @@ input, select, textarea, button { font-family: var(--font); }
 .cert-grid-compact { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
 .cert-card-compact { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px 20px; text-align: center; transition: var(--transition); }
 .cert-card-compact:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--blue); }
-.cert-badge-icon-sm { font-size: 28px; margin-bottom: 12px; }
+.cert-badge-icon-sm { font-size: 28px; margin-bottom: 12px; display: flex; align-items: center; justify-content: center; min-height: 72px; }
 .cert-card-compact h3 { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
 .cert-card-compact p { font-size: 12px; color: var(--gray-600); line-height: 1.6; }
 
