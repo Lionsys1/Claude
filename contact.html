@@ -115,7 +115,18 @@
         <h3>Send Us a Message</h3>
         <p>Tell us about your project or challenge.</p>
 
-        <form>
+        <div id="formSuccess" style="display:none;background:#ecfdf5;border:1px solid #6ee7b7;border-radius:12px;padding:28px 24px;text-align:center;">
+          <div style="font-size:40px;margin-bottom:12px;">✅</div>
+          <h4 style="color:#065f46;font-size:18px;margin-bottom:8px;">Message Sent!</h4>
+          <p style="color:#047857;font-size:14px;margin:0;">Thank you for reaching out. We'll get back to you within one business day.</p>
+        </div>
+
+        <div id="formError" style="display:none;background:#fef2f2;border:1px solid #fca5a5;border-radius:12px;padding:16px 20px;margin-bottom:20px;">
+          <p style="color:#dc2626;font-size:14px;margin:0;">Something went wrong. Please try again or email us directly at <a href="mailto:Info@lionsyssolutions.com" style="color:#dc2626;">Info@lionsyssolutions.com</a></p>
+        </div>
+
+        <form id="contactFormEl" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <input type="hidden" name="_subject" value="New Contact Form Submission — Lionsys Solutions">
 
           <div class="form-row">
             <div class="form-group">
@@ -171,9 +182,39 @@
             <div class="form-char-count"><span id="msgCount">0</span> / 1000</div>
           </div>
 
-          <button class="form-submit" type="submit">Submit →</button>
+          <button class="form-submit" type="submit" id="formBtn">Submit →</button>
 
         </form>
+
+        <script>
+          document.getElementById('contactFormEl').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('formBtn');
+            const errBox = document.getElementById('formError');
+            btn.textContent = 'Sending…';
+            btn.disabled = true;
+            errBox.style.display = 'none';
+            try {
+              const res = await fetch(this.action, {
+                method: 'POST',
+                body: new FormData(this),
+                headers: { 'Accept': 'application/json' }
+              });
+              if (res.ok) {
+                this.style.display = 'none';
+                document.getElementById('formSuccess').style.display = 'block';
+              } else {
+                errBox.style.display = 'block';
+                btn.textContent = 'Submit →';
+                btn.disabled = false;
+              }
+            } catch {
+              errBox.style.display = 'block';
+              btn.textContent = 'Submit →';
+              btn.disabled = false;
+            }
+          });
+        </script>
       </div>
 
     </div>
