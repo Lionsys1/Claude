@@ -118,12 +118,15 @@ input, select, textarea, button { font-family: var(--font); }
   background: var(--navy-dark);
 }
 
-/* Animated background image — Ken Burns slow zoom & drift */
+/* Subtle animated gradient mesh — no external image dependency */
 .hero::before {
   content: '';
   position: absolute;
   inset: -8%;
-  background: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=80&auto=format&fit=crop') center/cover no-repeat;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 40%, rgba(0,87,184,0.45) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 80% 20%, rgba(0,163,224,0.20) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 50% at 60% 80%, rgba(0,45,114,0.55) 0%, transparent 60%);
   animation: kenBurns 24s ease-in-out infinite alternate;
   z-index: 0;
 }
@@ -376,7 +379,7 @@ input, select, textarea, button { font-family: var(--font); }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 24px; display: flex; align-items: center; justify-content: space-between; font-size: 12px; }
 
 /* ── Page Hero (inner pages) ────────────────────── */
-.page-hero { padding: 72px 0; color: var(--white); background: linear-gradient(135deg, rgba(0,18,51,0.94) 0%, rgba(0,45,114,0.90) 100%), var(--img,url('')) center/cover no-repeat; }
+.page-hero { padding: 72px 0; color: var(--white); background-color: var(--navy-dark); background-image: linear-gradient(135deg, rgba(0,18,51,0.95) 0%, rgba(0,45,114,0.88) 100%), var(--img, none); background-size: cover; background-position: center; }
 .page-hero .label { margin-bottom: 14px; }
 .page-hero h1 { font-size: clamp(32px,5vw,54px); font-weight: 900; line-height: 1.12; letter-spacing: -1px; margin-bottom: 16px; }
 .page-hero p { font-size: 17px; color: rgba(255,255,255,0.72); max-width: 560px; line-height: 1.75; }
