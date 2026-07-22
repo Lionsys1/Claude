@@ -53,7 +53,8 @@ $body .= "Message:\n{$message}\n\n";
 $body .= "=============================================================\n";
 $body .= "Sent from lionsyssolutions.com contact form\n";
 
-$headers  = "From: noreply@lionsyssolutions.com\r\n";
+// FROM must be a real mailbox on Hostinger to avoid being blocked
+$headers  = "From: Info@lionsyssolutions.com\r\n";
 $headers .= "Reply-To: {$email}\r\n";
 $headers .= "X-Mailer: PHP/" . phpversion();
 
