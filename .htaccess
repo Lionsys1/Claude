@@ -1,0 +1,18 @@
+Options -Indexes
+RewriteEngine On
+
+# Redirect old WordPress-style URLs to new .html pages
+RewriteRule ^contract-vehicles/?$ /contract-vehicles.html [R=301,L]
+RewriteRule ^about/?$ /about.html [R=301,L]
+RewriteRule ^about-us/?$ /about.html [R=301,L]
+RewriteRule ^contact/?$ /contact.html [R=301,L]
+RewriteRule ^contact-us/?$ /contact.html [R=301,L]
+RewriteRule ^capabilities/?$ /capabilities.html [R=301,L]
+RewriteRule ^resources/?$ /resources.html [R=301,L]
+RewriteRule ^services/?$ /capabilities.html [R=301,L]
+
+# Redirect old WordPress ?p= and ?page_id= links to homepage
+RewriteCond %{QUERY_STRING} ^p=\d+$
+RewriteRule ^index\.php$ / [R=301,L]
+RewriteCond %{QUERY_STRING} ^page_id=\d+$
+RewriteRule ^index\.php$ / [R=301,L]
