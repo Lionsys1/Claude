@@ -6,14 +6,22 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 header('Content-Type: application/json');
 
+// Load PHPMailer
+require_once __DIR__ . '/phpmailer/Exception.php';
+require_once __DIR__ . '/phpmailer/PHPMailer.php';
+require_once __DIR__ . '/phpmailer/SMTP.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 // Sanitize helper
 function clean($val) {
     return htmlspecialchars(strip_tags(trim($val)), ENT_QUOTES, 'UTF-8');
 }
 
-// Honeypot spam check (hidden field — bots fill it, humans don't)
+// Honeypot spam check
 if (!empty($_POST['website_url'])) {
-    echo json_encode(['ok' => true]); // pretend success to fool bots
+    echo json_encode(['ok' => true]);
     exit;
 }
 
@@ -39,30 +47,44 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
-$to      = 'Info@lionsyssolutions.com';
-$subject = 'New Contact Form Submission — Lionsys Solutions';
+// ── SMTP CONFIG ──────────────────────────────────────────
+$smtpUser     = 'Info@lionsyssolutions.com';
+$smtpPassword = 'YOUR_EMAIL_PASSWORD_HERE'; // ← replace this
+$smtpHost     = 'smtp.hostinger.com';
+$smtpPort     = 587;
+// ─────────────────────────────────────────────────────────
 
-$body  = "You have a new contact form submission from lionsyssolutions.com\n";
-$body .= "=============================================================\n\n";
-$body .= "Name:             {$firstName} {$lastName}\n";
-$body .= "Email:            {$email}\n";
-$body .= "Phone:            " . ($phone ?: '—') . "\n";
-$body .= "Organization:     " . ($org ?: '—') . "\n";
-$body .= "Area of Interest: " . ($interest ?: '—') . "\n\n";
-$body .= "Message:\n{$message}\n\n";
-$body .= "=============================================================\n";
-$body .= "Sent from lionsyssolutions.com contact form\n";
+try {
+    $mail = new PHPMailer(true);
+    $mail->isSMTP();
+    $mail->Host       = $smtpHost;
+    $mail->SMTPAuth   = true;
+    $mail->Username   = $smtpUser;
+    $mail->Password   = $smtpPassword;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port       = $smtpPort;
 
-// FROM must be a real mailbox on Hostinger to avoid being blocked
-$headers  = "From: Info@lionsyssolutions.com\r\n";
-$headers .= "Reply-To: {$email}\r\n";
-$headers .= "X-Mailer: PHP/" . phpversion();
+    $mail->setFrom('Info@lionsyssolutions.com', 'Lionsys Solutions Website');
+    $mail->addAddress('Info@lionsyssolutions.com', 'Lionsys Solutions');
+    $mail->addReplyTo($email, "{$firstName} {$lastName}");
 
-$sent = mail($to, $subject, $body, $headers);
+    $mail->Subject = 'New Contact Form Submission — Lionsys Solutions';
+    $mail->Body =
+        "New contact form submission from lionsyssolutions.com\n" .
+        "=============================================================\n\n" .
+        "Name:             {$firstName} {$lastName}\n" .
+        "Email:            {$email}\n" .
+        "Phone:            " . ($phone ?: '—') . "\n" .
+        "Organization:     " . ($org ?: '—') . "\n" .
+        "Area of Interest: " . ($interest ?: '—') . "\n\n" .
+        "Message:\n{$message}\n\n" .
+        "=============================================================\n" .
+        "Sent from lionsyssolutions.com contact form\n";
 
-if ($sent) {
+    $mail->send();
     echo json_encode(['ok' => true]);
-} else {
+
+} catch (Exception $e) {
     http_response_code(500);
-    echo json_encode(['ok' => false, 'error' => 'Mail server error.']);
+    echo json_encode(['ok' => false, 'error' => 'Mail error.']);
 }
