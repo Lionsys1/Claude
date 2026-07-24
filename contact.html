@@ -125,7 +125,7 @@
           <p style="color:#dc2626;font-size:14px;margin:0;">Something went wrong. Please try again or email us directly at <a href="mailto:Info@lionsyssolutions.com" style="color:#dc2626;">Info@lionsyssolutions.com</a></p>
         </div>
 
-        <form id="contactFormEl" action="mail.php" method="POST">
+        <form id="contactFormEl" action="https://formspree.io/f/xaqrpzrr" method="POST">
           <!-- Honeypot: hidden from humans, bots fill it and get silently ignored -->
           <input type="text" name="website_url" style="display:none;" tabindex="-1" autocomplete="off">
 
@@ -198,10 +198,10 @@
             try {
               const res = await fetch(this.action, {
                 method: 'POST',
-                body: new FormData(this)
+                body: new FormData(this),
+                headers: { 'Accept': 'application/json' }
               });
-              const data = await res.json();
-              if (data.ok) {
+              if (res.ok) {
                 this.style.display = 'none';
                 document.getElementById('formSuccess').style.display = 'block';
               } else {
