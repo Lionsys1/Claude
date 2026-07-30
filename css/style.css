@@ -115,40 +115,41 @@ input, select, textarea, button { font-family: var(--font); }
   padding: 96px 0 80px;
   position: relative;
   overflow: hidden;
-  background: var(--navy-dark);
+  background: #000c28;
 }
 
-/* Subtle animated gradient mesh — no external image dependency */
+/* Animated colour mesh — next-gen gradient hero */
 .hero::before {
   content: '';
   position: absolute;
-  inset: -8%;
+  inset: -20%;
   background:
-    radial-gradient(ellipse 80% 60% at 20% 40%, rgba(0,87,184,0.45) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 80% at 80% 20%, rgba(0,163,224,0.20) 0%, transparent 55%),
-    radial-gradient(ellipse 70% 50% at 60% 80%, rgba(0,45,114,0.55) 0%, transparent 60%);
-  animation: kenBurns 24s ease-in-out infinite alternate;
+    radial-gradient(ellipse 70% 55% at 15% 50%, rgba(0,87,184,0.70) 0%, transparent 55%),
+    radial-gradient(ellipse 55% 65% at 85% 15%, rgba(0,163,224,0.50) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 70% 85%, rgba(6,182,212,0.30) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 40% at 50% 50%, rgba(0,45,114,0.60) 0%, transparent 70%);
+  animation: meshDrift 18s ease-in-out infinite alternate;
   z-index: 0;
 }
 
-/* Dark gradient overlay on top of the animated bg */
+/* Subtle grid overlay for depth */
 .hero::after {
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(135deg, rgba(0,12,40,0.90) 0%, rgba(0,30,80,0.84) 55%, rgba(0,50,120,0.76) 100%),
-    radial-gradient(ellipse 60% 60% at 80% 30%, rgba(0,163,224,0.10) 0%, transparent 60%);
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
   z-index: 1;
   pointer-events: none;
 }
 
-@keyframes kenBurns {
-  0%   { transform: scale(1.00) translate(0%,  0%); }
-  25%  { transform: scale(1.06) translate(-1.5%, 1%); }
-  50%  { transform: scale(1.10) translate(1%,  -1.5%); }
-  75%  { transform: scale(1.07) translate(-0.5%, 2%); }
-  100% { transform: scale(1.04) translate(2%,  0.5%); }
+@keyframes meshDrift {
+  0%   { transform: scale(1.00) translate(0%, 0%) rotate(0deg); }
+  33%  { transform: scale(1.08) translate(-2%, 1.5%) rotate(1deg); }
+  66%  { transform: scale(1.05) translate(2%, -1%) rotate(-1deg); }
+  100% { transform: scale(1.10) translate(-1%, 2%) rotate(0.5deg); }
 }
 .hero-wave {
   position: absolute;
