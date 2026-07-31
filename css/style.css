@@ -122,7 +122,7 @@ input, select, textarea, button { font-family: var(--font); }
 .hero::before {
   content: '';
   position: absolute;
-  inset: -8%;
+  inset: -25%;
   background: url('../assets/images/hero-bg.jpg') center/cover no-repeat;
   animation: kenBurns 24s ease-in-out infinite alternate;
   z-index: 0;
@@ -144,10 +144,10 @@ input, select, textarea, button { font-family: var(--font); }
 }
 
 @keyframes kenBurns {
-  0%   { transform: scale(1.00) translate(0%, 0%); }
-  33%  { transform: scale(1.06) translate(-1.5%, 1%); }
-  66%  { transform: scale(1.04) translate(1.5%, -0.8%); }
-  100% { transform: scale(1.10) translate(-0.5%, 1.5%); }
+  0%   { transform: scale(0.72) translate(0%, 0%); }
+  33%  { transform: scale(0.76) translate(-1%, 0.8%); }
+  66%  { transform: scale(0.74) translate(1%, -0.6%); }
+  100% { transform: scale(0.80) translate(-0.5%, 1%); }
 }
 .hero-wave {
   position: absolute;
